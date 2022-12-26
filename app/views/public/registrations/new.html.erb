@@ -19,7 +19,10 @@
   
   <div class="field">
     <%= f.label :"性別" %>
-    <%= f.text_field :gender %>
+    <%= f.radio_button :age, User.ages.key(0) %>
+    <%= f.label :age, User.ages_i18n[:male] %>
+    <%= f.radio_button :age, User.ages.key(1) %>
+    <%= f.label :age, User.ages_i18n[:female]%>
   </div>
   
   <div class="field">
@@ -28,7 +31,7 @@
   </div>
   
   <div class="field">
-    <%= f.label :"住所" %>
+    <%= f.label :"お住まいの都道府県" %>
     <%= f.text_field :address %>
   </div>
   
