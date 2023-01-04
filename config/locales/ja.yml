@@ -4,3 +4,34 @@ ja:
         age:
           male: "男性"
           female: "女性"
+      diary:
+        week:
+          weekday: "平日"
+          weekend&holiday: "土日祝日"
+        time:
+          morning: "午前中"
+          12pm~: "12時～"
+          2pm~: "14時～"
+          4pm~: "16時～"
+          6pm~: "18時～"
+        how_to_use:
+          for_here: "店内飲食"
+          to_go: "お持ち帰り"
+        waiting_time:
+          none: "なし"
+          15minutes: "～15分"
+          30minutes: "～30分"
+          45minutes: "～45分"
+          1hour: "1時間以上"
+        amount:
+          small: "少ない"
+          medium: "ちょうどいい"
+          large: "多い"
+        amount:
+          small: "少ない"
+          medium: "ちょうどいい"
+          large: "多い"
+        sweetness:
+          sweet: "甘い"
+          just_right: "ちょうどいい"
+          not_sweet: "甘くない"
