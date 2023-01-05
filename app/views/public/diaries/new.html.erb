@@ -1,38 +1,122 @@
 <h1>抹茶日記を書く</h1>
-<%= form_with model: @diary, url: diaries_confirm_path do |f| %>
-  <P>店名<%= f.text_field :address %></P>
-  <P>来店回数<%= f.text_field :address %></P>
-  <P>日付<%= f.text_field :address %></P>
-  <P>曜日</P>
+<%= form_with model: @diary, url: diaries_path do |f| %>
+  
+  <div class="field">
+    <%= f.label :"店名" %>
+    <%= f.text_field :shop_id %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"来店回数" %>
+    <%= f.text_field :number_of_times %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"日付" %>
+    <%= f.text_field :date %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"曜日" %>
     <%= f.radio_button :week, Diary.weeks.key(0) %>
     <%= f.label :week, Diary.weeks_i18n[:weekday] %>
     <%= f.radio_button :week, Diary.weeks.key(1) %>
     <%= f.label :week, Diary.weeks_i18n[:weekend_holiday] %>
-  <P>時間帯</P>
-    <%= f.radio_button :week, Diary.weeks.key(0) %>
-    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
-  <P>人数<%= f.text_field :address %></P>
-  <P>利用方法</P>
-    <%= f.radio_button :week, Diary.weeks.key(0) %>
-    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
-  <P>待ち時間</P>
-    <%= f.radio_button :week, Diary.weeks.key(0) %>
-    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
-  <P>ジャンル<%= f.text_field :address %></P>
-  <P>値段</P>
-    <%= f.radio_button :week, Diary.weeks.key(0) %>
-    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
-  <P>量</P>
-    <%= f.radio_button :week, Diary.weeks.key(0) %>
-    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
-  <P>抹茶の濃さ</P>
-  <P>抹茶の甘さ</P>
-    <%= f.radio_button :week, Diary.weeks.key(0) %>
-    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
-  <P>総合評価</P>
+  </div>
   
+  <div class="field">
+    <%= f.label :"時間帯" %>
+    <%= f.radio_button :time, Diary.times.key(0) %>
+    <%= f.label :time, Diary.times_i18n[:morning] %>
+    <%= f.radio_button :time, Diary.times.key(1) %>
+    <%= f.label :time, Diary.times_i18n[:pm_12] %>
+    <%= f.radio_button :time, Diary.times.key(2) %>
+    <%= f.label :time, Diary.times_i18n[:pm_14] %>
+    <%= f.radio_button :time, Diary.times.key(3) %>
+    <%= f.label :time, Diary.times_i18n[:pm_16] %>
+    <%= f.radio_button :time, Diary.times.key(4) %>
+    <%= f.label :time, Diary.times_i18n[:pm_18] %>
+  </div>
   
-  <P>商品画像</P>
+  <div class="field">
+    <%= f.label :"人数" %>
+    <%= f.text_field :number_of_people %>
+  </div>
   
-  <%= f.submit '確認画面へ進む', class:"btn btn-primary" %>
+  <div class="field">
+    <%= f.label :"利用方法" %>
+    <%= f.radio_button :how_to_use, Diary.how_to_uses.key(0) %>
+    <%= f.label :how_to_use, Diary.how_to_uses_i18n[:for_here] %>
+    <%= f.radio_button :how_to_use, Diary.how_to_uses.key(1) %>
+    <%= f.label :how_to_use, Diary.how_to_uses_i18n[:to_go] %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"待ち時間" %>
+    <%= f.radio_button :waiting_time, Diary.waiting_times.key(0) %>
+    <%= f.label :waiting_time, Diary.waiting_times_i18n[:none_time] %>
+    <%= f.radio_button :waiting_time, Diary.waiting_times.key(1) %>
+    <%= f.label :waiting_time, Diary.waiting_times_i18n[:minutes_15] %>
+    <%= f.radio_button :waiting_time, Diary.waiting_times.key(2) %>
+    <%= f.label :waiting_time, Diary.waiting_times_i18n[:minutes_30] %>
+    <%= f.radio_button :waiting_time, Diary.waiting_times.key(3) %>
+    <%= f.label :waiting_time, Diary.waiting_times_i18n[:minutes_45] %>
+    <%= f.radio_button :waiting_time, Diary.waiting_times.key(4) %>
+    <%= f.label :waiting_time, Diary.waiting_times_i18n[:hour_1] %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"ジャンル" %>
+    <%= f.text_field :genre_id %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"値段" %>
+    <%= f.radio_button :price, Diary.prices.key(0) %>
+    <%= f.label :price, Diary.prices_i18n[:yen_500] %>
+    <%= f.radio_button :price, Diary.prices.key(1) %>
+    <%= f.label :price, Diary.prices_i18n[:yen_1000] %>
+    <%= f.radio_button :price, Diary.prices.key(2) %>
+    <%= f.label :price, Diary.prices_i18n[:yen_1500] %>
+    <%= f.radio_button :price, Diary.prices.key(3) %>
+    <%= f.label :price, Diary.prices_i18n[:yen_2000] %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"量" %>
+    <%= f.radio_button :amount, Diary.amounts.key(0) %>
+    <%= f.label :amount, Diary.amounts_i18n[:small] %>
+    <%= f.radio_button :amount, Diary.amounts.key(1) %>
+    <%= f.label :amount, Diary.amounts_i18n[:medium] %>
+    <%= f.radio_button :amount, Diary.amounts.key(2) %>
+    <%= f.label :amount, Diary.amounts_i18n[:large] %>
+  </div>  
+  
+  <div class="field">
+    <%= f.label :"抹茶の濃さ" %>
+    <%= f.text_field :darkness %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"抹茶の甘さ" %>
+    <%= f.radio_button :sweetness, Diary.sweetnesses.key(0) %>
+    <%= f.label :sweetness, Diary.sweetnesses_i18n[:sweet] %>
+    <%= f.radio_button :sweetness, Diary.sweetnesses.key(1) %>
+    <%= f.label :sweetness, Diary.sweetnesses_i18n[:just_right] %>
+    <%= f.radio_button :sweetness, Diary.sweetnesses.key(2) %>
+    <%= f.label :sweetness, Diary.sweetnesses_i18n[:not_sweet] %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"総合評価" %>
+    <%= f.text_field :comprehensive_evaluation %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"商品画像" %>
+    <%= f.text_field :comprehensive_evaluation %>
+  </div>
+    
+  
+  <%= f.submit '日記を書く', class:"btn btn-primary" %>
 <% end %>         　　　

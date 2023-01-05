@@ -16,7 +16,7 @@ get '/users/unsubscribe' => 'public/users#unsubscribe'
 patch '/users/withdraw' => 'public/users#withdraw' 
   scope module: :public do
       resources :users, only: [:show, :edit, :update]
-      resources :diaries, only: [:index, :edit, :create, :update, :destroy]
+      resources :diaries, only: [:new, :show, :index, :edit, :create, :update, :destroy]
   end
 # 管理者用
 # URL /admin/sign_in ...

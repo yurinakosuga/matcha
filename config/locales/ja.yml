@@ -10,19 +10,24 @@ ja:
           weekend&holiday: "土日祝日"
         time:
           morning: "午前中"
-          12pm~: "12時～"
-          2pm~: "14時～"
-          4pm~: "16時～"
-          6pm~: "18時～"
+          pm_12: "12時～"
+          pm_14: "14時～"
+          pm_16: "16時～"
+          pm_18: "18時～"
         how_to_use:
           for_here: "店内飲食"
           to_go: "お持ち帰り"
         waiting_time:
-          none: "なし"
-          15minutes: "～15分"
-          30minutes: "～30分"
-          45minutes: "～45分"
-          1hour: "1時間以上"
+          none_time: "なし"
+          minutes_15: "～15分"
+          minutes_30: "～30分"
+          minutes_45: "～45分"
+          hour_1: "1時間以上"
+        price:
+          yen_500: "～500円"
+          yen_1000: "～1000円"
+          yen_1500: "～1500円"
+          yen_2000: "2000円以上"
         amount:
           small: "少ない"
           medium: "ちょうどいい"
@@ -30,4 +35,4 @@ ja:
         sweetness:
           sweet: "甘い"
           just_right: "ちょうどいい"
-          : "甘くない"
+          not_sweet: "甘くない"
