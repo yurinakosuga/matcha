@@ -27,11 +27,7 @@ ja:
           small: "少ない"
           medium: "ちょうどいい"
           large: "多い"
-        amount:
-          small: "少ない"
-          medium: "ちょうどいい"
-          large: "多い"
         sweetness:
           sweet: "甘い"
           just_right: "ちょうどいい"
-          not_sweet: "甘くない"
+          : "甘くない"

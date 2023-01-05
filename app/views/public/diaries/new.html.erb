@@ -1,21 +1,38 @@
 <h1>抹茶日記を書く</h1>
 <%= form_with model: @diary, url: diaries_confirm_path do |f| %>
-  <P>支払方法</P>
-    <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
-    <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
-    <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
-    <%= f.label :payment_method, Order.payment_methods_i18n[:transfer]%>
-  <P>お届け先</P>
-  　<%= f.radio_button :select_address, "0" %>
-　　<%= f.label :select_address, "ご自身の住所" %></br>
-　　〒<%= current_customer.postal_code %>
-　  <%= current_customer.address %></br>
-　  <%= current_customer.last_name %>
-　  <%= current_customer.first_name %></br>
-　　<%= f.radio_button :select_address, "1" %>
-　　<%= f.label :select_address, "新しいお届け先" %>
-　　郵便番号(ハイフンなし)<%= f.text_field :postal_code %>
-　　住所<%= f.text_field :address %>　
-　　宛名<%= f.text_field :name %>
+  <P>店名<%= f.text_field :address %></P>
+  <P>来店回数<%= f.text_field :address %></P>
+  <P>日付<%= f.text_field :address %></P>
+  <P>曜日</P>
+    <%= f.radio_button :week, Diary.weeks.key(0) %>
+    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
+    <%= f.radio_button :week, Diary.weeks.key(1) %>
+    <%= f.label :week, Diary.weeks_i18n[:weekend_holiday] %>
+  <P>時間帯</P>
+    <%= f.radio_button :week, Diary.weeks.key(0) %>
+    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
+  <P>人数<%= f.text_field :address %></P>
+  <P>利用方法</P>
+    <%= f.radio_button :week, Diary.weeks.key(0) %>
+    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
+  <P>待ち時間</P>
+    <%= f.radio_button :week, Diary.weeks.key(0) %>
+    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
+  <P>ジャンル<%= f.text_field :address %></P>
+  <P>値段</P>
+    <%= f.radio_button :week, Diary.weeks.key(0) %>
+    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
+  <P>量</P>
+    <%= f.radio_button :week, Diary.weeks.key(0) %>
+    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
+  <P>抹茶の濃さ</P>
+  <P>抹茶の甘さ</P>
+    <%= f.radio_button :week, Diary.weeks.key(0) %>
+    <%= f.label :week, Diary.weeks_i18n[:weekday] %>
+  <P>総合評価</P>
+  
+  
+  <P>商品画像</P>
+  
   <%= f.submit '確認画面へ進む', class:"btn btn-primary" %>
 <% end %>         　　　
