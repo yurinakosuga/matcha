@@ -100,7 +100,25 @@
   
   <div class="field">
     <%= f.label :"抹茶の濃さ" %>
-    <%= f.text_field :darkness %>
+    <div class="d-inline-block">
+      <div class="post_form">
+        <%= f.radio_button :darkness, 1 ,id: 'star1'%>
+        <label for="star1">★</label>
+    
+        <%= f.radio_button :darkness, 2 ,id: 'star2'%>
+        <label for="star2">★</label>
+  
+        <%= f.radio_button :darkness, 3 ,id: 'star3'%>
+        <label for="star3">★</label>
+  
+        <%= f.radio_button :darkness, 4 ,id: 'star4'%>
+        <label for="star4">★</label>
+    
+        <%= f.radio_button :darkness, 5 ,id: 'star5'%>
+        <label for="star5">★</label>
+      </div>
+    </div>
+    
   </div>
   
   <div class="field">
@@ -115,7 +133,24 @@
   
   <div class="field">
     <%= f.label :"総合評価" %>
-    <%= f.text_field :comprehensive_evaluation %>
+    <div class="d-inline-block">
+      <div class="post_form">
+        <%= f.radio_button :comprehensive_evaluation, 1 ,id: 'star1'%>
+        <label for="star1">★</label>
+    
+        <%= f.radio_button :comprehensive_evaluation, 2 ,id: 'star2'%>
+        <label for="star2">★</label>
+  
+        <%= f.radio_button :comprehensive_evaluation, 3 ,id: 'star3'%>
+        <label for="star3">★</label>
+  
+        <%= f.radio_button :comprehensive_evaluation, 4 ,id: 'star4'%>
+        <label for="star4">★</label>
+    
+        <%= f.radio_button :comprehensive_evaluation, 5 ,id: 'star5'%>
+        <label for="star5">★</label>
+      </div>
+    </div>
   </div>
   
   <div class="field">

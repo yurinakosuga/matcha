@@ -6,16 +6,28 @@
  <p>来店回数</p>
  <%= @diary.number_of_times %>
  <p>日付</p>
- <%= @item.date %>
- <p>税込価格<br>
- (税抜価格)</p>
- <%= (@item.price * 1.1).floor %>
- (<%= @item.price %>)円
- <p>販売ステータス</p>                  
- <% if @item.is_active %>
- <td>販売中</td>
- <% else %>
- <td>販売停止中</td>
-  <% end %> 
-  <%= link_to "編集する", edit_admin_item_path(@item.id), class:"btn btn-success" %>
+ <%= @diary.date %>
+ <p>曜日</p>
+ <%= @diary.week %>
+ <p>時間帯</p>
+ <%= @diary.time %>
+ <p>人数</p>
+ <%= @diary.number_of_people %>
+ <p>利用方法</p>
+ <%= @diary.how_to_use %>
+ <p>待ち時間</p>
+ <%= @diary.waiting_time %>
+ <p>ジャンル</p>
+ <%= @diary.genre_id %>
+ <p>値段</p>
+ <%= @diary.price %>
+ <p>量</p>
+ <%= @diary.amount %>
+ <p>抹茶の濃さ</p>
+ <%= @diary.darkness %>
+ <p>抹茶の甘さ</p>
+ <%= @diary.sweetness %>
+ <p>総合評価</p>
+ <%= @diary.comprehensive_evaluation %>
+  <%= link_to "編集する", edit_diary_path(@diary.id), class:"btn btn-success" %>
 </div>
