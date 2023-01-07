@@ -8,12 +8,16 @@
   
   <div class="field">
     <%= f.label :"来店回数" %>
-    <%= f.text_field :number_of_times %>
+    <%= f.select :number_of_times,*[1..10] %>回
   </div>
   
   <div class="field">
     <%= f.label :"日付" %>
-    <%= f.text_field :date %>
+    <%= f.select :date, [['2023',1],['2022',2], ['2021',3], ['2020',4], ['2019',5], ['2018',6]] %>年
+    <%= f.select :date, *[1..12] %>月
+    <%= f.select :date, *[1..31] %>日
+    
+  </div>
   </div>
   
   <div class="field">
@@ -40,7 +44,7 @@
   
   <div class="field">
     <%= f.label :"人数" %>
-    <%= f.text_field :number_of_people %>
+    <%= f.select :number_of_people, *[1..10] %>人
   </div>
   
   <div class="field">

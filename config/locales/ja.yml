@@ -7,7 +7,7 @@ ja:
       diary:
         week:
           weekday: "平日"
-          weekend&holiday: "土日祝日"
+          weekend_holiday: "土日祝日"
         time:
           morning: "午前中"
           pm_12: "12時～"

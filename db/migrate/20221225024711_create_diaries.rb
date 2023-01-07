@@ -4,7 +4,7 @@ class CreateDiaries < ActiveRecord::Migration[6.1]
       
       t.integer  :user_id, null: false
       t.integer  :shop_id, null: false
-      t.integer  :number_of_times, null: false
+      t.string  :number_of_times, null: false
       t.datetime  :date, null: false
       t.integer  :week, null: false
       t.integer  :time, null: false
