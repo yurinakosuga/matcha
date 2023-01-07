@@ -3,7 +3,8 @@
   
   <div class="field">
     <%= f.label :"店名" %>
-    <%= f.text_field :shop_id %>
+    <%= f.select :shop_id, options_from_collection_for_select(Shop.all, :id, :name), prompt: '—選択してください—'
+       %>
   </div>
   
   <div class="field">
@@ -71,7 +72,8 @@
   
   <div class="field">
     <%= f.label :"ジャンル" %>
-    <%= f.text_field :genre_id %>
+     <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), prompt: '—選択してください—'
+       %>
   </div>
   
   <div class="field">
@@ -104,11 +106,11 @@
   <div class="field">
     <%= f.label :"抹茶の甘さ" %>
     <%= f.radio_button :sweetness, Diary.sweetnesses.key(0) %>
-    <%= f.label :sweetness, Diary.sweetnesses_i18n[:sweet] %>
+    <%= f.label :sweetness, Diary.sweetnesses_i18n[:not_sweet] %>
     <%= f.radio_button :sweetness, Diary.sweetnesses.key(1) %>
     <%= f.label :sweetness, Diary.sweetnesses_i18n[:just_right] %>
     <%= f.radio_button :sweetness, Diary.sweetnesses.key(2) %>
-    <%= f.label :sweetness, Diary.sweetnesses_i18n[:not_sweet] %>
+    <%= f.label :sweetness, Diary.sweetnesses_i18n[:sweet] %>
   </div>
   
   <div class="field">
@@ -118,7 +120,7 @@
   
   <div class="field">
     <%= f.label :"商品画像" %>
-    <%= f.text_field :comprehensive_evaluation %>
+    <%= f.file_field :image, accept: "image/*" %>
   </div>
     
   

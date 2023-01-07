@@ -1,0 +1,21 @@
+<h1>抹茶日記</h1>
+<div>
+ <%= image_tag @diary.image, size: "5×5" %>   
+ <p>店名</p>
+ <%= @diary.shop_id %>
+ <p>来店回数</p>
+ <%= @diary.number_of_times %>
+ <p>日付</p>
+ <%= @item.date %>
+ <p>税込価格<br>
+ (税抜価格)</p>
+ <%= (@item.price * 1.1).floor %>
+ (<%= @item.price %>)円
+ <p>販売ステータス</p>                  
+ <% if @item.is_active %>
+ <td>販売中</td>
+ <% else %>
+ <td>販売停止中</td>
+  <% end %> 
+  <%= link_to "編集する", edit_admin_item_path(@item.id), class:"btn btn-success" %>
+</div>

@@ -33,6 +33,6 @@ ja:
           medium: "ちょうどいい"
           large: "多い"
         sweetness:
-          sweet: "甘い"
+          not_sweet: "控え目"
           just_right: "ちょうどいい"
-          not_sweet: "甘くない"
+          sweet: "とても甘い"
