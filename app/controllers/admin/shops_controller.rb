@@ -2,7 +2,7 @@ class Admin::ShopsController < ApplicationController
   
   def index
     @shop = Shop.new
-    @shops = Shops.all
+    @shops = Shop.all
     
   end
   

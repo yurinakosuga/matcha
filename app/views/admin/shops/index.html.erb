@@ -11,7 +11,7 @@
 
   
   <span><%= shop.name %></span>
-  <%= link_to "編集する", edit_admin_shop_path(genre.id), class:"btn btn-success" %>
-  
+  <%= link_to "編集する", edit_admin_shop_path(shop.id), class:"btn btn-success" %>
+  <%= link_to "削除する",admin_shop_path(shop.id), method: :delete ,class: "btn btn-sm btn-danger" %>
 <% end %>
 
