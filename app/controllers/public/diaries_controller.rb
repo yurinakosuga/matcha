@@ -20,6 +20,13 @@ class Public::DiariesController < ApplicationController
   def create
     @diary = Diary.new(diary_params)
     #@diary.user_id = current_user.id
+    @diary.save
+    
+    if @diary.save
+      redirect_to '/'
+    else
+      render new
+    end
   end
 
   def update

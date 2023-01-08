@@ -19,10 +19,10 @@
   
   <div class="field">
     <%= f.label :"性別" %>
-    <%= f.radio_button :age, User.ages.key(0) %>
-    <%= f.label :age, User.ages_i18n[:male] %>
-    <%= f.radio_button :age, User.ages.key(1) %>
-    <%= f.label :age, User.ages_i18n[:female]%>
+    <%= f.radio_button :gender, User.genders.key(0) %>
+    <%= f.label :gender, User.genders_i18n[:male] %>
+    <%= f.radio_button :gender, User.genders.key(1) %>
+    <%= f.label :gender, User.genders_i18n[:female]%>
   </div>
   
   <div class="field">
