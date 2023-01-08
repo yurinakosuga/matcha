@@ -2,7 +2,7 @@
 <div>
  <%= image_tag @diary.image, size: "5×5" %>   
  <p>店名</p>
- <%= @diary.shop_id %>
+ <%= @diary.shop.name %>
  <p>来店回数</p>
  <%= @diary.number_of_times %>
  <p>日付</p>
@@ -14,7 +14,7 @@
  <p>人数</p>
  <%= @diary.number_of_people %>
  <p>利用方法</p>
- <%= @diary.how_to_use %>
+ <%= @diary.how_to_use_i18n %>
  <p>待ち時間</p>
  <%= @diary.waiting_time %>
  <p>ジャンル</p>
@@ -28,6 +28,9 @@
  <p>抹茶の甘さ</p>
  <%= @diary.sweetness %>
  <p>総合評価</p>
- <%= @diary.comprehensive_evaluation %>
-  <%= link_to "編集する", edit_diary_path(@diary.id), class:"btn btn-success" %>
+ 
+ <% @diary.comprehensive_evaluation.times do %>
+  <span>★</span>
+ <% end %>
+ <%= link_to "編集する", edit_diary_path(@diary.id), class:"btn btn-success" %>
 </div>
