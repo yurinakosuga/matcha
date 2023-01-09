@@ -20,7 +20,7 @@ class Public::DiariesController < ApplicationController
   def create
     @diary = Diary.new(diary_params)
     @diary.user_id = current_user.id
-    @diary.date = "#{params[:date_year]}-#{params[:date_month]}-#{params[:date_day]} 00:00:00"
+    @diary.date = "#{params[:diary][:date_year]}-#{params[:diary][:date_month]}-#{params[:diary][:date_day]} 00:00:00"
     @diary.save
     
     if @diary.save
@@ -32,6 +32,7 @@ class Public::DiariesController < ApplicationController
 
   def update
     @diary = Diary.find(params[:id])
+    @diary.date = "#{params[:diary][:date_year]}-#{params[:diary][:date_month]}-#{params[:diary][:date_day]} 00:00:00"
     @diary.update(diary_params)
     redirect_to diary_path(@diary.id) 
   end
@@ -40,7 +41,22 @@ class Public::DiariesController < ApplicationController
   end
   
   def diary_params
-    params.require(:diary).permit(:user_id, :shop_id, :number_of_times, :week, :time, :number_of_people, :how_to_use, :waiting_time, :genre_id, :price, :amount, :darkness, :sweetness, :comprehensive_evaluation, :image)
+    params.require(:diary).permit(
+      :user_id,
+      :shop_id,
+      :number_of_times,
+      :week,
+      :time,
+      :number_of_people,
+      :how_to_use,
+      :waiting_time,
+      :genre_id,
+      :price,
+      :amount,
+      :darkness,
+      :sweetness,
+      :comprehensive_evaluation,
+      :image)
   end
 
 end
