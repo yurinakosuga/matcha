@@ -1,6 +1,6 @@
 class Public::DiariesController < ApplicationController
   def index
-    @diaries = Order.all
+    @diaries = Diary.all
   end
   
   def new
@@ -31,6 +31,9 @@ class Public::DiariesController < ApplicationController
   end
 
   def update
+    @diary = Diary.find(params[:id])
+    @diary.update(diary_params)
+    redirect_to diary_path(@diary.id) 
   end
   
   def destroy
