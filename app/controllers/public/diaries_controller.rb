@@ -56,7 +56,9 @@ class Public::DiariesController < ApplicationController
       :darkness,
       :sweetness,
       :comprehensive_evaluation,
-      :image)
+      :image,
+      :free_writing)
+      
   end
 
 end

@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2023_01_08_115330) do
   create_table "diaries", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "shop_id", null: false
-    t.integer "number_of_times", null: false
+    t.string "number_of_times", null: false
     t.datetime "date", null: false
     t.integer "week", null: false
     t.integer "time", null: false
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2023_01_08_115330) do
     t.integer "darkness", null: false
     t.integer "sweetness", null: false
     t.integer "comprehensive_evaluation", null: false
+    t.string "free_writing"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

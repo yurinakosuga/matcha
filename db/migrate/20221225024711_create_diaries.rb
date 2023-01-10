@@ -17,6 +17,7 @@ class CreateDiaries < ActiveRecord::Migration[6.1]
       t.integer  :darkness, null: false
       t.integer  :sweetness, null: false
       t.integer  :comprehensive_evaluation, null: false
+      t.string  :free_writing
 
       t.timestamps
     end
