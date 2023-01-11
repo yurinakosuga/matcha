@@ -12,6 +12,7 @@ devise_for :users,skip: [:passwords], controllers: {
 }
 root to: 'public/homes#top'
 get '/about' => 'public/homes#about'
+get '/search' => 'public/searchs#search'
 get '/users/unsubscribe' => 'public/users#unsubscribe'
 patch '/users/withdraw' => 'public/users#withdraw' 
   scope module: :public do
