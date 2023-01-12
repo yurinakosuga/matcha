@@ -12,12 +12,12 @@ devise_for :users,skip: [:passwords], controllers: {
 }
 root to: 'public/homes#top'
 get '/about' => 'public/homes#about'
-get '/search' => 'public/searchs#search'
 get '/users/unsubscribe' => 'public/users#unsubscribe'
 patch '/users/withdraw' => 'public/users#withdraw' 
   scope module: :public do
       resources :users, only: [:show, :edit, :update]
       resources :diaries, only: [:new, :show, :index, :edit, :create, :update, :destroy]
+      resources :searchs, only: [:show, :new ]
   end
 # 管理者用
 # URL /admin/sign_in ...
