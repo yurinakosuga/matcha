@@ -1,2 +1,30 @@
-<h1>Admin::Homes#top</h1>
-<p>Find me in app/views/admin/homes/top.html.erb</p>
+<div class="container mt-5">
+  <div class="row">
+    <h5>抹茶日記投稿一覧</h5>
+    <table class="table table-hover table-inverse">
+      <thead>
+        <tr>
+          <th>投稿日時</th>
+          <th>投稿者</th>
+          <th>店名</th>
+          <th>ジャンル</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @diaries.each do |diary| %>
+     
+          <tr>
+            <td><%= link_to diary.created_at.strftime('%Y年%m月%d日'),  admin_diary_path(diary.id) %></td>
+            <td><%= diary.user.last_name_kana %><%= diary.user.first_name_kana %></td>
+            <td><%= diary.shop.name %></td>
+            <td><%= diary.genre.name %></td>
+            
+                 
+            
+          </tr>
+        <% end %>
+          
+      </tbody>
+    </table>
+  </div>
+</div>

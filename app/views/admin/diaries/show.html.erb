@@ -1,0 +1,68 @@
+<h1>抹茶日記</h1>
+<div>
+ <%= image_tag @diary.image, size: "5×5" %>
+ <div class="field">
+   店名
+   <%= @diary.shop.name %>
+ </div>
+ <div class="field">
+   来店回数
+   <%= @diary.number_of_times %>
+ </div>
+ <div class="field">
+   日付
+   <%= @diary.date.strftime('%Y年%m月%d日') %>
+ </div>
+ <div class="field">
+   曜日
+   <%= @diary.week_i18n %>
+ </div>
+ <div class="field">
+   時間帯
+   <%= @diary.time_i18n %>
+ </div>
+ <div class="field">
+   人数
+   <%= @diary.number_of_people %>
+ </div>
+ <div class="field">
+   利用方法
+   <%= @diary.how_to_use_i18n %>
+ </div>
+ <div class="field">
+   待ち時間
+   <%= @diary.waiting_time_i18n %>
+ </div>
+ <div class="field">
+   ジャンル
+   <%= @diary.genre.name %>
+ </div>
+ <div class="field">
+   値段
+   <%= @diary.price_i18n %>
+ </div>
+ <div class="field">
+   量
+   <%= @diary.amount_i18n %>
+ </div>
+ <div class="field">
+   抹茶の濃さ
+   <% @diary.darkness.times do %>
+    <span>★</span>
+   <% end %>
+ </div>
+ <div class="field">
+   抹茶の甘さ
+   <%= @diary.sweetness_i18n %>
+ </div>
+ <div class="field">
+   総合評価
+   <% @diary.comprehensive_evaluation.times do %>
+    <span>★</span>
+   <% end %>
+ </div>
+ <div class="field">
+  自由コメント欄</br>
+  <% @diary.free_writing %>
+ </div>
+ 

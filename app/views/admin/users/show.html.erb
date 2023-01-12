@@ -1,2 +1,50 @@
-<h1>Admin::Users#show</h1>
-<p>Find me in app/views/admin/users/show.html.erb</p>
+<h5><%= @user.last_name_kana %><%= @user.first_name_kana %>さんの会員詳細</h5>
+
+
+
+<div class="field">
+  会員ID
+  <%= @user.id %>
+</div>
+
+<div class="field">
+  名前（カナ）
+  <%= @user.last_name_kana %><%= @user.first_name_kana %>
+</div>
+
+<div class="field">
+  ニックネーム
+  <%= @user.nickname %>
+</div>
+
+<div class="field">
+  性別
+  <%= @user.gender_i18n %>
+</div>
+
+<div class="field">
+  年齢
+  <%= @user.age %>
+</div>
+
+<div class="field">
+  お住まいの都道府県
+  <%= @user.address %>
+</div>
+
+<div class="field">
+  メールアドレス
+  <%= @user.email %>
+</div>
+
+<div class="field">
+  会員ステータス                  
+   <% if @user.is_deleted %>
+   <td>退会</td>
+   <% else %>
+   <td>有効</td>
+    <% end %>   
+</div>
+
+<%= link_to "編集する", edit_admin_user_path(@user.id), class:"btn btn-success" %>
+<%= link_to "抹茶日記投稿一覧を見る", admin_root_path, class:"btn btn-primary" %>

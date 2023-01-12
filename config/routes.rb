@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   namespace :admin do
     get 'shops/index'
     get 'shops/edit'
@@ -17,7 +18,7 @@ patch '/users/withdraw' => 'public/users#withdraw'
   scope module: :public do
       resources :users, only: [:show, :edit, :update]
       resources :diaries, only: [:new, :show, :index, :edit, :create, :update, :destroy]
-      resources :searchs, only: [:show, :new ]
+      resources :searchs, only: [:index ]
   end
 # 管理者用
 # URL /admin/sign_in ...
@@ -30,6 +31,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
    resources :genres, only: [:index, :create, :edit, :update, :destroy]
    resources :shops, only: [:index, :create, :edit, :update, :destroy]
    resources :users, only: [:index, :show, :edit, :update, :destroy]
+   resources :diaries, only: [:show ]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
