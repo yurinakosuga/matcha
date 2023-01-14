@@ -19,6 +19,7 @@ patch '/users/withdraw' => 'public/users#withdraw'
       end
       resources :diaries, only: [:new, :show, :index, :edit, :create, :update, :destroy]
       resources :searchs, only: [:index ]
+      resources :comments, only: [:index, :new, :show, :create, :destroy]
   end
 # 管理者用
 # URL /admin/sign_in ...

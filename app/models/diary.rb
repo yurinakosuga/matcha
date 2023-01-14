@@ -3,6 +3,7 @@ class Diary < ApplicationRecord
   belongs_to :shop
   belongs_to :genre
   belongs_to :user
+  has_many :comments
   
   enum week: { weekday: 0, weekend_holiday: 1 }
   enum time: { morning: 0, pm_12: 1, pm_14: 2, pm_16: 3, pm_18: 4 }
