@@ -1,2 +1,70 @@
-<h1>Admin::Users#edit</h1>
-<p>Find me in app/views/admin/users/edit.html.erb</p>
+<h2><%= @user.last_name_kana %><%= @user.first_name_kana %>さんの会員情報編集</h2>
+
+  <div class="field">
+    会員ID
+    <%= @user.id %>
+  </div>
+
+<%= form_with model: @user, url:admin_user_path(current_user.id), method: :patch do |f| %>
+
+  <div class="field">
+    フリガナ
+    <%= f.label :"(セイ)" %>
+    <%= f.text_field :last_name_kana %>
+    <%= f.label :"(メイ)" %>
+    <%= f.text_field :first_name_kana %>
+  </div>
+  
+  
+  <div class="field">
+    <%= f.label :"ニックネーム" %>
+    <%= f.text_field :nickname %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"性別" %>
+    <%= f.radio_button :gender, User.genders.key(0) %>
+    <%= f.label :gender, User.genders_i18n[:male] %>
+    <%= f.radio_button :gender, User.genders.key(1) %>
+    <%= f.label :gender, User.genders_i18n[:female]%>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"年齢" %>
+    <%= f.select :age, [['10代未満',1],['10代',2], ['20代',3], ['30代',4], ['40代',5], ['50代',6], ['60代',7], ['70代以上',8]] %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :"お住まいの都道府県" %>
+    <%= f.select :address, 
+     [['北海道',1],['青森県',2], ['岩手県',3], ['宮城県',4], ['秋田県',5], ['山形県',6], ['福島県',7], ['茨城県',8],
+      ['栃木県',9],['群馬県',10], ['埼玉県',11], ['千葉県',12], ['東京都',13], ['神奈川県',14], ['新潟県',15], ['富山県',16],
+      ['石川県',17],['福井県',18], ['山梨県',19], ['長野県',20], ['岐阜県',21], ['静岡県',22], ['愛知県',23], ['三重県',24],
+      ['滋賀県',25],['京都府',26], ['大阪府',27], ['兵庫県',28], ['奈良県',29], ['和歌山県',30], ['鳥取県',31], ['島根県',32],
+      ['岡山県',33],['広島県',34], ['山口県',35], ['徳島県',36], ['香川県',37], ['愛媛県',38], ['高知県',39], ['福岡県',40],
+      ['佐賀県',41],['長崎県',42], ['熊本県',43], ['大分県',44], ['宮崎県',45], ['鹿児島県',46], ['沖縄県',47]] %>
+    　 
+  </div>
+  
+  <div class="field">
+    <%= f.label :"メールアドレス" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+  
+  <div class="field">
+  　会員ステータス
+    <%= f.radio_button :is_deleted, false %>
+    <%= f.label :is_deleted, "有効" %>
+    <%= f.radio_button :is_deleted, true %>
+    <%= f.label :is_deleted, "退会" %>
+  </div>
+  
+  
+
+  <div class="actions">
+    <%= f.submit "編集内容を保存", class:"btn btn-success" %>
+  </div>
+  
+   
+  
+<% end %>

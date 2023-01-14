@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="row">
+    
+    <h1>抹茶日記一覧</h1>
+      <% @user.diaries.each do |diary| %>
+      　<%= link_to diary_path(diary.id) do  %>　　 
+         <%= image_tag diary.get_image, size: "5×5" %> 
+        <% end %>
+        <%= diary.shop.name %>
+        <%= diary.genre.name %>
+      
+      <% end %>
+  </div>
+</div>

@@ -21,7 +21,7 @@
             
             <% if admin_signed_in? %>
               <li>
-                <%= link_to  root_path, class: "nav-link text-light" do %>
+                <%= link_to  admin_users_path, class: "nav-link text-light" do %>
                   
                   <span>会員一覧</span>
                 <% end %>
@@ -39,7 +39,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to  root_path, class: "nav-link text-light" do %>
+                <%= link_to  admin_root_path, class: "nav-link text-light" do %>
                   
                   <span>抹茶日記投稿一覧</span>
                 <% end %>

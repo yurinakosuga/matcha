@@ -63,8 +63,10 @@
  </div>
  <div class="field">
   自由コメント欄</br>
-  <% @diary.free_writing %>
+  <%= @diary.free_writing %>
  </div>
+ 
+ 
  
  <%= link_to "編集する", edit_diary_path(@diary.id), class:"btn btn-success" %>
 </div>

@@ -11,6 +11,7 @@ class Public::DiariesController < ApplicationController
   
   def show
     @diary = Diary.find(params[:id])
+    
   end
 
   def edit
@@ -24,7 +25,7 @@ class Public::DiariesController < ApplicationController
     @diary.save
     
     if @diary.save
-      redirect_to diary_path(@diary.id)
+      redirect_to user_diaries_path(current_user.id)
     else
       render new
     end

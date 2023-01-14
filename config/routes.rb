@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
   
-  
-  namespace :admin do
-    get 'shops/index'
-    get 'shops/edit'
-  end
 # 顧客用
 # URL /customers/sign_in ...
 devise_for :users,skip: [:passwords], controllers: {
@@ -16,7 +11,12 @@ get '/about' => 'public/homes#about'
 get '/users/unsubscribe' => 'public/users#unsubscribe'
 patch '/users/withdraw' => 'public/users#withdraw' 
   scope module: :public do
-      resources :users, only: [:show, :edit, :update]
+      resources :users, only: [:show, :edit, :update] do
+        scope module: :users do
+          resources :diaries, only: :index
+        end
+        
+      end
       resources :diaries, only: [:new, :show, :index, :edit, :create, :update, :destroy]
       resources :searchs, only: [:index ]
   end

@@ -1,9 +1,26 @@
 <h1>マイページ</h1>
 <p><%= link_to "抹茶日記を書く", new_diary_path %></p>
-<p><%= link_to "抹茶日記一覧", diaries_path %></p>
-<p><%= link_to "会員登録情報", edit_user_path(@user.id) %></p>
+<p><%= link_to "抹茶日記一覧", user_diaries_path(current_user.id) %></p>
+<p><%= link_to "会員登録情報", edit_user_path(current_user.id) %></p>
 <p><%= link_to '退会する', users_unsubscribe_path %></p>
 
+<h2>みんなの抹茶日記新着</h2>
 <% @new_diaries.each do |diary| %>
+  <%= link_to diary_path(diary.id) do  %>
+    <%= image_tag diary.image, size: "5×5" %>
+  <% end %>
   <%= diary.shop.name %>
+  <%= diary.genre.name %>
+  抹茶の濃さ
+   <% diary.darkness.times do %>
+    <span>★</span>
+   <% end %>
+  総合評価
+   <% diary.comprehensive_evaluation.times do %>
+    <span>★</span>
+   <% end %>
+  <%= diary.free_writing %>
+  <%= link_to user_diaries_path(diary.user.id) do  %>
+    <%= diary.user.nickname %>
+  <% end %>
 <% end %>

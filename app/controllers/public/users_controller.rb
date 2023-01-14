@@ -1,6 +1,7 @@
 class Public::UsersController < ApplicationController
   def show
-    @user = current_user
+    
+    @user = User.find(params[:id])
     @new_diaries = Diary.all.order(updated_at: :desc).limit(10)
   end
 
