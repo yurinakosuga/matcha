@@ -15,11 +15,14 @@ patch '/users/withdraw' => 'public/users#withdraw'
         scope module: :users do
           resources :diaries, only: :index
         end
-        
       end
-      resources :diaries, only: [:new, :show, :index, :edit, :create, :update, :destroy]
+      resources :diaries, only: [:new, :show, :index, :edit, :create, :update, :destroy] do
+        scope module: :diaries do
+         resources :comments, only: [:create]
+        end
+      end
       resources :searchs, only: [:index ]
-      resources :comments, only: [:index, :new, :show, :create, :destroy]
+      
   end
 # 管理者用
 # URL /admin/sign_in ...

@@ -12,17 +12,16 @@ class Public::CommentsController < ApplicationController
   end
   
   def create
-    @comment = Comment.new(comment_params)
-    @comment.save
+    @comment = current_user.comments.new(comment_params)
     if @comment.save
-      redirect_to comments_path
+      redirect_back(fallback_location: root_path)  #コメント送信後は、一つ前のページへリダイレクトさせる。
     else
-      render new
+      redirect_back(fallback_location: root_path)  #同上
     end
-    
   end
+   
   
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:comment_content, :post_id, :user_id)
   end
 end
