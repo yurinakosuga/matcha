@@ -2,7 +2,7 @@ class Admin::ShopsController < ApplicationController
   
   def index
     @shop = Shop.new
-    @shops = Shop.all
+    @shops = Shop.all.order(created_at: :desc)
     
   end
   
