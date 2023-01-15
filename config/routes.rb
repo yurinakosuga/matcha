@@ -17,9 +17,9 @@ patch '/users/withdraw' => 'public/users#withdraw'
         end
       end
       resources :diaries, only: [:new, :show, :index, :edit, :create, :update, :destroy] do
-        scope module: :diaries do
+        
          resources :comments, only: [:create]
-        end
+        
       end
       resources :searchs, only: [:index ]
       
