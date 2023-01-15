@@ -41,6 +41,11 @@ class Public::DiariesController < ApplicationController
   end
   
   def destroy
+    @diary = Diary.find(params[:id])
+    user = @diary.user
+    @diary.destroy
+    redirect_to user_diaries_path(user.id) 
+    
   end
   
   def diary_params

@@ -1,15 +1,4 @@
 class Public::CommentsController < ApplicationController
-  def new
-    @comment = Comment.new
-  end
-  
-  def index
-    @comments = Comment.all
-  end
-
-  def show
-    @comment = Comment.find(params[:id])
-  end
   
   def create
     @comment = current_user.comments.new(comment_params)

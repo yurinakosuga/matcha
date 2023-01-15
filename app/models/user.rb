@@ -6,4 +6,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum gender: { male: 0, female: 1 }
+  enum age: {
+    under_teens: 1,
+    teens: 2,
+    twenties: 3,
+    thirties: 4,
+    forties: 5,
+    fifties: 6,
+    sixties: 7,
+    over_seventies: 8
+  }
 end

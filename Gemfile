@@ -61,3 +61,5 @@ gem 'net-pop'
 gem 'net-imap'
 gem "enum_help"
 gem 'ransack'
+gem 'rails-i18n'
+gem 'jp_prefecture'

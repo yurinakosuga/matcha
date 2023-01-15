@@ -24,12 +24,12 @@
 
 <div class="field">
   年齢
-  <%= @user.age %>
+  <%= @user.age_i18n %>
 </div>
 
 <div class="field">
   お住まいの都道府県
-  <%= @user.address %>
+  <%= JpPrefecture::Prefecture.find(@user.address).name %>
 </div>
 
 <div class="field">
