@@ -1,56 +1,72 @@
 class Public::SearchShopDetailsController < ApplicationController
     def search
-      @shops = Shop.joins(:diaries)
+      #@shops = Shop.joins(:diaries)
+      @query_flag = false
+      @shops = []
+      #byebug
       if params[:name].present?
-        @shops = @shops.where("name LIKE ?", "%#{params[:name]}%")
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where("name LIKE ?", "%#{params[:name]}%").distinct
       end
       
       if params[:number_of_times].present?
-        @shops = @shops.where(diaries: { number_of_times: params[:number_of_times] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { number_of_times: params[:number_of_times] }).distinct
       end
       
       if params[:week].present?
-        @shops = @shops.where(diaries: { week: params[:week] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { week: params[:week] }).distinct
       end
       
       if params[:time].present?
-        @shops = @shops.where(diaries: { time: params[:time] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { time: params[:time] }).distinct
       end
       
       if params[:number_of_people].present?
-        @shops = @shops.where(diaries: { number_of_people: params[:number_of_people] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { number_of_people: params[:number_of_people] }).distinct
       end
       
       if params[:how_to_use].present?
-        @shops = @shops.where(diaries: { how_to_use: params[:how_to_use] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { how_to_use: params[:how_to_use] }).distinct
       end
       
       if params[:waiting_time].present?
-        @shops = @shops.where(diaries: { waiting_time: params[:waiting_time] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { waiting_time: params[:waiting_time] }).distinct
       end
       
       if params[:genre].present?
-        @shops = @shops.where("name LIKE ?", "%#{params[:genre]}%")
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where("name LIKE ?", "%#{params[:genre]}%").distinct
       end
       
       if params[:price].present?
-        @shops = @shops.where(diaries: { price: params[:price] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { price: params[:price] }).distinct
       end
       
       if params[:amount].present?
-        @shops = @shops.where(diaries: { amount: params[:amount] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { amount: params[:amount] }).distinct
       end
       
       if params[:darkness].present?
-        @shops = @shops.where(diaries: { darkness: params[:darkness] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { darkness: params[:darkness] }).distinct
       end
       
       if params[:sweetness].present?
-        @shops = @shops.where(diaries: { sweetness: params[:sweetness] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { sweetness: params[:sweetness] }).distinct
       end
       
       if params[:comprehensive_evaluation].present?
-        @shops = @shops.where(diaries: { comprehensive_evaluation: params[:comprehensive_evaluation] })
+        @query_flag = true
+        @shops = Shop.joins(:diaries).where(diaries: { comprehensive_evaluation: params[:comprehensive_evaluation] }).distinct
       end
     end  
  

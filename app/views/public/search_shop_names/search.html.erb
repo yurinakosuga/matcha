@@ -6,13 +6,15 @@
 <% end %>
 
 結果....
-<% if @shops == [] %>
+<% if @query.present? %>
+
+  <% if @shops == [] %>
 　　検索結果はありません
-<% else %>
+  <% end %>
  
-<% @shops.each do |shop| %>
-   <%= shop.name %>
-   <%= link_to "日記一覧", diaries_path(shop_id: shop) %>
-<% end %>
+  <% @shops.each do |shop| %>
+     <%= shop.name %>
+     <%= link_to "日記一覧", diaries_path(shop_id: shop) %>
+  <% end %>
 
 <% end %>
