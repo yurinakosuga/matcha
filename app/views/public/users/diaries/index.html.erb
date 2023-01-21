@@ -1,14 +1,35 @@
 <div class="container mt-5">
-  <div class="row">
+  <div class="col-2">
+    <h5>抹茶日記一覧</h5>
+  </div>  
+</div>
+<div class="card w-50 mx-auto mt-4 shadow-lg">
+  <div class="card-body">
     
-    <h1>抹茶日記一覧</h1>
+    <div class="row">
+       
+    
+    
       <% @user.diaries.each do |diary| %>
+      　<div class="col-2">
       　<%= link_to diary_path(diary.id) do  %>　　 
          <%= image_tag diary.get_image, size: "5×5" %> 
         <% end %>
-        <%= diary.shop.name %>
-        <%= diary.genre.name %>
-      
+        </div>
+        <div class="col-5">
+        <%= diary.shop.name %></br>
+        <%= diary.genre.name %></br>
+        抹茶の濃さ
+         <% diary.darkness.times do %>
+          <span>★</span>
+         <% end %></br>
+        総合評価
+         <% diary.comprehensive_evaluation.times do %>
+          <span>★</span>
+         <% end %>
+        <%= diary.free_writing %>
+        </div>
       <% end %>
+    </div>
   </div>
-</div>
+</div>  

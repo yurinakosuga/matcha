@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pf</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Matcha</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-       <div class="container">
-         
-         
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
+  <body class="d-flex flex-column vh-100">
+    <header class="shadow-sm">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+
             
             <% if admin_signed_in? %>
               <li>
-                <%= link_to  admin_users_path, class: "nav-link text-light" do %>
+                <%= link_to  admin_users_path, class: "nav-link text-dark" do %>
                   
                   <span>会員一覧</span>
                 <% end %>
               </li>
               <li>
-                <%= link_to   admin_shops_path, class: "nav-link text-light" do %>
+                <%= link_to   admin_shops_path, class: "nav-link text-dark" do %>
                   
                   <span>ショップ一覧</span>
                 <% end %>
               </li>
               <li>
-                <%= link_to  admin_genres_path, class: "nav-link text-light" do %>
+                <%= link_to  admin_genres_path, class: "nav-link text-dark" do %>
                   
                   <span>ジャンル一覧</span>
                 <% end %>
               </li>
               <li>
-                <%= link_to  admin_root_path, class: "nav-link text-light" do %>
+                <%= link_to  admin_root_path, class: "nav-link text-dark" do %>
                   
                   <span>抹茶日記投稿一覧</span>
                 <% end %>
               </li>
               <li>
-                <%= link_to  destroy_admin_session_path, method: :delete, class: "nav-link text-light" do %>
+                <%= link_to  destroy_admin_session_path, method: :delete, class: "nav-link text-dark" do %>
                   
                   <span>ログアウト</span>
                 <% end %>
@@ -58,22 +59,29 @@
             <% elsif user_signed_in? %>
             
               <li>
-                <%= link_to  user_path(current_user.id), class: "nav-link text-light" do %>
+                <%= link_to  user_path(current_user.id), class: "nav-link text-dark" do %>
                   
                   <span>マイページ</span>
                 <% end %>
               </li>
               
               <li>
-                <%= link_to  searchs_path, class: "nav-link text-light" do %>
+                <%= link_to  search_shop_names_search_path, class: "nav-link text-dark" do %>
                   
-                  <span>検索する</span>
+                  <span>店名検索</span>
+                <% end %>
+              </li>
+              
+              <li>
+                <%= link_to  search_shop_details_search_path, class: "nav-link text-dark" do %>
+                  
+                  <span>店舗詳細検索</span>
                 <% end %>
               </li>
               
               
               <li>
-                <%= link_to  destroy_user_session_path, method: :delete, class: "nav-link text-light" do %>
+                <%= link_to  destroy_user_session_path, method: :delete, class: "nav-link text-dark" do %>
                   
                   <span>ログアウト</span>
                 <% end %>
@@ -84,19 +92,19 @@
             <% else %>
             
               <li>
-                <%= link_to  root_path, class: "nav-link text-light" do %>
+                <%= link_to  root_path, class: "nav-link text-dark" do %>
                   
                   <span>ゲストログイン</span>
                 <% end %>
               </li>
               <li>
-                <%= link_to  new_user_registration_path, class: "nav-link text-light" do %>
+                <%= link_to  new_user_registration_path, class: "nav-link text-dark" do %>
                   
                   <span>新規登録</span>
                 <% end %>
               </li>
               <li>
-                <%= link_to   new_user_session_path, class: "nav-link text-light" do %>
+                <%= link_to   new_user_session_path, class: "nav-link text-dark" do %>
                   
                   <span>ログイン</span>
                 <% end %>
@@ -104,18 +112,25 @@
               
             <% end %>
           </ul>
-         </div>
-       </div>
+          </div>
+        </div>
       </nav>
     </header>
-    <%= flash[:notice] %>
+    <main class="mb-auto">
     <%= yield %>
-    <footer>
-      <div class="container mt-5">
-      	<div class="row">
-        	<div class="mx-auto">
-        		<p>CopyRight Infratop.inc</p>
-        	</div>
+    </main>
+    <footer class="bg-dark text-white pt-10 pb-4">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="container mt-5">
+          	<div class="row">
+            	<div class="mx-auto">
+            		<p>CopyRight Infratop.inc</p>
+            	</div>
+            </div>
+          
+          
+          </div>
         </div>
       </div>
     </footer>

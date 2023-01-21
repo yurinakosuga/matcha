@@ -1,6 +1,9 @@
 class Public::DiariesController < ApplicationController
   def index
     @diaries = Diary.all.order(created_at: :desc)
+    if params[:shop_id].present?
+      @diaries = @diaries.where(shop_id: params[:shop_id])
+    end
   end
   
   def new

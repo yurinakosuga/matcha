@@ -7,6 +7,9 @@ devise_for :users,skip: [:passwords], controllers: {
   sessions: 'public/sessions'
 }
 root to: 'public/homes#top'
+get 'search_shop_names/search' => 'public/search_shop_names#search'
+get 'search_shop_details/search' => 'public/search_shop_details#search'
+post 'search_shop_details/search' => 'public/search_shop_details#search'
 get '/about' => 'public/homes#about'
 get '/users/unsubscribe' => 'public/users#unsubscribe'
 patch '/users/withdraw' => 'public/users#withdraw' 
@@ -21,7 +24,8 @@ patch '/users/withdraw' => 'public/users#withdraw'
          resources :comments, only: [:create]
         
       end
-      resources :searchs, only: [:index ]
+      resources :search_shop_names, only: [:index ]
+      resources :search_shop_details, only: [:index ]
       
   end
 # 管理者用

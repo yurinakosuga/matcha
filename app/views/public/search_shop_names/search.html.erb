@@ -1,0 +1,18 @@
+<%= search_form_for @q, url:  search_shop_names_search_path do |f| %>
+  <%= f.label :name, "店名検索" %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.submit "検索する" %>
+<% end %>
+
+結果....
+<% if @shops == [] %>
+　　検索結果はありません
+<% else %>
+ 
+<% @shops.each do |shop| %>
+   <%= shop.name %>
+   <%= link_to "日記一覧", diaries_path(shop_id: shop) %>
+<% end %>
+
+<% end %>
