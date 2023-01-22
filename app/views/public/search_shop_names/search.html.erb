@@ -2,12 +2,14 @@
   <%= f.label :name, "店名検索" %>
   <%= f.search_field :name_cont %>
 
-  <%= f.submit "検索する" %>
+  <%= f.submit "検索する", class:"btn btn-outline-success" %>
+  <%= link_to "クリア", search_shop_names_search_path, class:"btn btn-outline-success" %>
 <% end %>
 
-結果....
-<% if @query.present? %>
 
+
+<% if @query.present? %>
+結果....
   <% if @shops == [] %>
 　　検索結果はありません
   <% end %>

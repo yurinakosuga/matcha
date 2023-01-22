@@ -74,7 +74,7 @@
  <% else %>
  
     <%= form_with(model:[@diary, @comment], method: :post) do |f| %>
-      <%= f.text_area :comment_content %>
+      <%= f.text_area :comment_content %></br>
       <%= f.hidden_field :diary_id, value: @diary.id %>
       <%= f.submit 'コメントする', class:"btn btn-success" %>
     <% end %>
@@ -83,11 +83,27 @@
  
  <h2>コメント一覧</h2>
  <% @comments.each do |comment| %>
+   <div class="card w-50 mx-auto mt-4 shadow-lg">
+   
+  <div class="card-body">
+    
+    
    <%= comment.comment_content %>
-   <%= link_to user_diaries_path(comment.user.id) do  %>　　 
-      (<%= comment.user.nickname %>/ 
-    <% end %>
+   <div class="row">
+    <div class="col-11">
+    (
+    <%= link_to user_diaries_path(comment.user.id) do %>
+      <%= comment.user.nickname %> 
+    <% end %>/
     <%= comment.user.age_i18n %>/
     <%= comment.user.gender_i18n %>)
+    
+    <% if @comment.user_id == current_user.id %>
+      <%= link_to "削除する", diary_comment_path(@diary, comment.id), method: :delete ,class: "btn btn-sm btn-danger" %>
+    <% end %>
+    </div>
+    </div>
+  </div>
+</div>   
  <% end %>
 </div>

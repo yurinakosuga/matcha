@@ -1,26 +1,42 @@
 <h1>マイページ</h1>
-<p><%= link_to "抹茶日記を書く", new_diary_path %></p>
-<p><%= link_to "抹茶日記一覧", user_diaries_path(current_user.id) %></p>
-<p><%= link_to "会員登録情報", edit_user_path(current_user.id) %></p>
-<p><%= link_to '退会する', users_unsubscribe_path %></p>
+<p><%= link_to "抹茶日記を書く", new_diary_path, class:"btn btn-outline-primary" %></p>
+<p><%= link_to "抹茶日記一覧", user_diaries_path(current_user.id), class:"btn btn-outline-primary" %></p>
+<p><%= link_to "会員登録情報", edit_user_path(current_user.id), class:"btn btn-outline-primary" %></p>
+<p><%= link_to '退会する', users_unsubscribe_path, class:"btn btn-outline-primary" %></p>
 
-<h2>みんなの抹茶日記新着</h2>
-<% @new_diaries.each do |diary| %>
-  <%= link_to diary_path(diary.id) do  %>
-    <%= image_tag diary.image, size: "5×5" %>
-  <% end %>
-  <%= diary.shop.name %>
-  <%= diary.genre.name %>
-  抹茶の濃さ
-   <% diary.darkness.times do %>
-    <span>★</span>
-   <% end %>
-  総合評価
-   <% diary.comprehensive_evaluation.times do %>
-    <span>★</span>
-   <% end %>
-  <%= diary.free_writing %>
-  <%= link_to user_diaries_path(diary.user.id) do  %>
-    <%= diary.user.nickname %>
-  <% end %>
-<% end %>
+<h2 class="">みんなの抹茶日記新着</h2>
+
+        <% @new_diaries.each do |diary| %>
+        <div class="card w-50 mx-auto mt-4 shadow-lg">
+   
+  <div class="card-body">
+    
+    <div class="row">
+        <div class="col-4">
+          <%= link_to diary_path(diary.id) do  %>
+            <%= image_tag diary.image, size: "5×5" %>
+          <% end %>
+         </div> 
+          <div class="col-5">
+          <%= diary.shop.name %></br>
+          <%= diary.genre.name %></br>
+          抹茶の濃さ
+           <% diary.darkness.times do %>
+            <span>★</span>
+           <% end %></br>
+          総合評価
+           <% diary.comprehensive_evaluation.times do %>
+            <span>★</span>
+           <% end %>
+          <%= link_to user_diaries_path(diary.user.id) do  %></br>
+            <%= diary.user.nickname %>
+          <% end %>
+       </div>
+        </div>
+  </div>
+</div>          
+           
+          
+          
+        <% end %>
+ 

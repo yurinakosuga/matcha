@@ -1,17 +1,20 @@
 <div class="container mt-5">
-  <div class="col-2">
-    <h5>抹茶日記一覧</h5>
-  </div>  
+  <div class="col-5">
+     <h5>抹茶日記一覧</h5>
+  </div>
 </div>
-<div class="card w-50 mx-auto mt-4 shadow-lg">
-  <div class="card-body">
-    
-    <div class="row">
+
        
     
     
       <% @user.diaries.each do |diary| %>
-      　<div class="col-2">
+      
+      <div class="card w-50 mx-auto mt-4 shadow-lg">
+   
+  <div class="card-body">
+    
+    <div class="row">
+      　<div class="col-4">
       　<%= link_to diary_path(diary.id) do  %>　　 
          <%= image_tag diary.get_image, size: "5×5" %> 
         <% end %>
@@ -29,7 +32,9 @@
          <% end %>
         <%= diary.free_writing %>
         </div>
-      <% end %>
-    </div>
+        
+         </div>
   </div>
 </div>  
+      <% end %>
+   

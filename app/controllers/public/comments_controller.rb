@@ -9,6 +9,13 @@ class Public::CommentsController < ApplicationController
     end
   end
    
+   def destroy
+    comment = Comment.find(params[:id])
+    diary = comment.diary
+    comment.destroy
+    redirect_to diary_path(diary)
+    
+   end
   
   def comment_params
     params.require(:comment).permit(:comment_content, :diary_id, :user_id)

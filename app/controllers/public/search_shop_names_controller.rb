@@ -11,10 +11,4 @@ class Public::SearchShopNamesController < ApplicationController
       end
     end
     
-    def index
-      
-    
-    end
-    
-    
 end
