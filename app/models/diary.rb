@@ -5,6 +5,24 @@ class Diary < ApplicationRecord
   belongs_to :user
   has_many :comments
   
+  validates :shop_id, presence: true
+  validates :number_of_times, presence: true
+  validates :date, presence: true
+  validates :week, presence: true
+  validates :time, presence: true
+  validates :number_of_people, presence: true
+  validates :how_to_use, presence: true
+  validates :waiting_time, presence: true
+  validates :genre_id, presence: true
+  validates :price, presence: true
+  validates :amount, presence: true
+  validates :darkness, presence: true
+  validates :sweetness, presence: true
+  validates :comprehensive_evaluation, presence: true
+  validates :darkness, presence: true
+  
+  
+  
   enum week: { weekday: 0, weekend_holiday: 1 }
   enum time: { morning: 0, pm_12: 1, pm_14: 2, pm_16: 3, pm_18: 4 }
   enum how_to_use: { for_here: 0, to_go: 1 }

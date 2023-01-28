@@ -31,7 +31,7 @@ class Public::DiariesController < ApplicationController
     if @diary.save
       redirect_to user_diaries_path(current_user.id)
     else
-      render new
+      render :new
     end
   end
 

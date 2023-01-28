@@ -26,7 +26,8 @@
   
   <div class="field">
     <%= f.label :"年齢" %>
-    <%= f.select :age, [['10代未満',1],['10代',2], ['20代',3], ['30代',4], ['40代',5], ['50代',6], ['60代',7], ['70代以上',8]] %>
+    <%= f.select :age, [['10代未満',"under_teens"],['10代',"teens"], ['20代',"twenties"], ['30代',"thirties"], ['40代',"forties"], 
+    ['50代',"fifties"], ['60代',"sixties"], ['70代以上',"over_seventies"]] %>
   </div>
   
   <div class="field">
@@ -44,19 +45,6 @@
   <div class="field">
     <%= f.label :"メールアドレス" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  
-  
-  <div class="field">
-    <%= f.label :"パスワード(６文字以上)" %>
-    <% if @minimum_password_length %>
-    <% end %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :"パスワード(確認用)" %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">

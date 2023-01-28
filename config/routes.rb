@@ -13,21 +13,23 @@ post 'search_shop_details/search' => 'public/search_shop_details#search'
 get '/about' => 'public/homes#about'
 get '/users/unsubscribe' => 'public/users#unsubscribe'
 patch '/users/withdraw' => 'public/users#withdraw' 
-  scope module: :public do
-      resources :users, only: [:show, :edit, :update] do
-        scope module: :users do
-          resources :diaries, only: :index
-        end
+
+scope module: :public do
+    resources :users, only: [:show, :edit, :update] do
+      scope module: :users do
+        resources :diaries, only: :index
       end
-      resources :diaries, only: [:new, :show, :index, :edit, :create, :update, :destroy] do
-        
-         resources :comments, only: [:create, :destroy]
-        
-      end
-      resources :search_shop_names, only: [:index ]
-      resources :search_shop_details, only: [:index ]
+    end
+    resources :diaries, only: [:new, :show, :index, :edit, :create, :update, :destroy] do
       
-  end
+       resources :comments, only: [:create, :destroy]
+      
+    end
+    post '/users/guest_sign_in', to: 'users#guest_sign_in'
+    resources :search_shop_names, only: [:index ]
+    resources :search_shop_details, only: [:index ]
+    
+end
 # 管理者用
 # URL /admin/sign_in ...
 devise_for :admin, skip: [:registrations, :passwords] ,controllers: {

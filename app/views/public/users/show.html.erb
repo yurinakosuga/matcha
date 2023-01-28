@@ -2,7 +2,9 @@
 <p><%= link_to "抹茶日記を書く", new_diary_path, class:"btn btn-outline-primary" %></p>
 <p><%= link_to "抹茶日記一覧", user_diaries_path(current_user.id), class:"btn btn-outline-primary" %></p>
 <p><%= link_to "会員登録情報", edit_user_path(current_user.id), class:"btn btn-outline-primary" %></p>
-<p><%= link_to '退会する', users_unsubscribe_path, class:"btn btn-outline-primary" %></p>
+<% unless current_user.email == 'guest@example.com' %>
+  <p><%= link_to '退会する', users_unsubscribe_path, class:"btn btn-outline-primary" %></p>
+<% end %>
 
 <h2 class="">みんなの抹茶日記新着</h2>
 

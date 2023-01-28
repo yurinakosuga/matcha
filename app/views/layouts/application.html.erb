@@ -92,7 +92,8 @@
             <% else %>
             
               <li>
-                <%= link_to  root_path, class: "nav-link text-dark" do %>
+                <%= link_to  users_guest_sign_in_path, method: :post, class: "nav-link text-dark" do %>
+                
                   
                   <span>ゲストログイン</span>
                 <% end %>

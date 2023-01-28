@@ -98,7 +98,7 @@
     <%= comment.user.age_i18n %>/
     <%= comment.user.gender_i18n %>)
     
-    <% if @comment.user_id == current_user.id %>
+    <% if comment.user_id == current_user.id %>
       <%= link_to "削除する", diary_comment_path(@diary, comment.id), method: :delete ,class: "btn btn-sm btn-danger" %>
     <% end %>
     </div>

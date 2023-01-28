@@ -45,3 +45,6 @@ ja:
         not_sweet: "控え目"
         just_right: "ちょうどいい"
         sweet: "とても甘い"
+  # activerecord:
+  #   attributes:
+  #     shop_id: "店名"
