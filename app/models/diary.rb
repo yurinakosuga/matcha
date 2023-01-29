@@ -1,25 +1,21 @@
 class Diary < ApplicationRecord
   has_one_attached :image
   belongs_to :shop
-  belongs_to :genre
   belongs_to :user
   has_many :comments
-  
-  validates :shop_id, presence: true
+  # validates :shop, presence: true
   validates :number_of_times, presence: true
-  validates :date, presence: true
   validates :week, presence: true
   validates :time, presence: true
-  validates :number_of_people, presence: true
   validates :how_to_use, presence: true
   validates :waiting_time, presence: true
-  validates :genre_id, presence: true
+  belongs_to :genre#diaries/new エラーメッセージ表示の順番によりこの位置に配置
   validates :price, presence: true
   validates :amount, presence: true
   validates :darkness, presence: true
   validates :sweetness, presence: true
   validates :comprehensive_evaluation, presence: true
-  validates :darkness, presence: true
+  
   
   
   

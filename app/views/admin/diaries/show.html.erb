@@ -65,4 +65,6 @@
   自由コメント欄</br>
   <% @diary.free_writing %>
  </div>
- 
+ <div class="field">
+ <%= link_to "削除する", admin_diary_path(@diary.id), method: :delete ,class: "btn btn-sm btn-danger" %>
+ </div>

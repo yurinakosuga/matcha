@@ -1,4 +1,20 @@
 ja:
+  activerecord:
+    models:
+      diary: '日記'
+    attributes:
+      diary:
+        shop: "店名"
+        week: "曜日"
+        time: "時間帯"
+        genre: "ジャンル"
+        how_to_use: '利用方法'
+        waiting_time: "待ち時間"
+        price: "値段"
+        amount: "量"
+        darkness: "抹茶の濃さ"
+        sweetness: "抹茶の甘さ"
+        comprehensive_evaluation: "総合評価"
   enums:
     user:
       gender:
@@ -45,6 +61,4 @@ ja:
         not_sweet: "控え目"
         just_right: "ちょうどいい"
         sweet: "とても甘い"
-  # activerecord:
-  #   attributes:
-  #     shop_id: "店名"
+  

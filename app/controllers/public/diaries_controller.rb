@@ -1,4 +1,7 @@
 class Public::DiariesController < ApplicationController
+  before_action :authenticate_user!, except: [:create, :update, :destroy]
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  
   def index
     @diaries = Diary.all.order(created_at: :desc)
     if params[:shop_id].present?

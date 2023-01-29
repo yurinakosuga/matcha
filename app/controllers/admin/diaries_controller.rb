@@ -5,4 +5,12 @@ class Admin::DiariesController < ApplicationController
 
   def edit
   end
+  
+  def destroy
+    
+    @diary = Diary.find(params[:id])
+    @diary.destroy
+    redirect_to admin_root_path
+    
+  end
 end

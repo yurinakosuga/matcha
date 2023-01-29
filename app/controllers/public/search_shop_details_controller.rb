@@ -1,4 +1,7 @@
 class Public::SearchShopDetailsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  
     def search
       #@shops = Shop.joins(:diaries)
       @query_flag = false
@@ -70,10 +73,4 @@ class Public::SearchShopDetailsController < ApplicationController
       end
     end  
  
-    def index
-    end
-    
-    def show
-    end
-    
 end
