@@ -1,7 +1,7 @@
 
 <%= form_with model: @diary, url: search_shop_details_search_path do |f| %>
   
-  
+  <%= f.hidden_field :q, value: "search" %>
   <div class="field">
     <%= f.label :"来店回数" %>
     <%= f.select :number_of_times,*[1..10], include_blank: true %>回
@@ -141,13 +141,13 @@
   </div>
   
   
-  <%= f.submit '検索する', class:"btn btn-outline-primary" %>
-  <%= link_to "クリア", search_shop_details_search_path, class:"btn btn-outline-primary" %>
+  <%= f.submit '検索する', class:"btn btn-outline-success" %>
+  <%= link_to "クリア", search_shop_details_search_path, class:"btn btn-outline-success" %>
 <% end %> 
 
-結果....
-<% if @query_flag.present? %>
 
+<% if params[:q].present? %>
+  <p>検索結果</p>
   <% if @shops == [] %>
 　　検索結果はありません
   <% end %>
