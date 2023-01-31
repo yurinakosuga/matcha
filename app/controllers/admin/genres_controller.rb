@@ -1,4 +1,6 @@
 class Admin::GenresController < ApplicationController
+  before_action :authenticate_admin!, except: [:create, :update, :destroy]
+  before_action :configure_permitted_parameters, if: :devise_controller?
   
   def index
     @genre = Genre.new

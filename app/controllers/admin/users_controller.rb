@@ -1,4 +1,7 @@
 class Admin::UsersController < ApplicationController
+  before_action :authenticate_admin!, except: [:update]
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  
   
   def index
     @user = User.new

@@ -1,4 +1,7 @@
 class Admin::DiariesController < ApplicationController
+  before_action :authenticate_admin!, except: [:destroy]
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  
   def show
     @diary = Diary.find(params[:id])
   end
