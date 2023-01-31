@@ -5,7 +5,7 @@
     <%= @user.id %>
   </div>
 
-<%= form_with model: @user, url:admin_user_path(current_user.id), method: :patch do |f| %>
+<%= form_with model: @user, url:admin_user_path(@user.id), method: :patch do |f| %>
 
   <div class="field">
     フリガナ
