@@ -45,6 +45,7 @@ while num < 10 do
    Diary.create(id: num,
                 user_id: num, 
                 shop_id: 1, 
+                date: Date.new(2022, 8, 15),
                 number_of_times: "1",
                 week: 1, 
                 time: 1, 
@@ -55,7 +56,7 @@ while num < 10 do
                 price: 1,
                 amount: 1,
                 darkness: 5,
-                sweetness: 3,
+                sweetness: 1,
                 comprehensive_evaluation: 5,
                 free_writing: "抹茶が濃くておいしかったです")
    num = num + 1
