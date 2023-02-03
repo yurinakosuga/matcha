@@ -1,7 +1,11 @@
-
-<%= form_with model: @diary, url: search_shop_details_search_path do |f| %>
+<%= form_with model: @diary, url: search_diaries_search_path do |f| %>
   
   <%= f.hidden_field :q, value: "search" %>
+  <div class="field">
+    <%= f.label :"店名" %>
+    <%= f.select :shop_id, options_from_collection_for_select(Shop.all, :id, :name), prompt: ''%>
+  </div>
+  
   <div class="field">
     <%= f.label :"来店回数" %>
     <%= f.select :number_of_times,*[1..10], include_blank: true %>回

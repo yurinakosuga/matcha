@@ -8,9 +8,13 @@ devise_for :users,skip: [:passwords], controllers: {
 }
 root to: 'public/homes#top'
 get 'search_shop_names/search' => 'public/search_shop_names#search'
+
 get 'search_shop_details/search' => 'public/search_shop_details#search'
 post 'search_shop_details/search' => 'public/search_shop_details#search'
-get '/about' => 'public/homes#about'
+
+get 'search_diaries/search' => 'public/search_diaries#search'
+post 'search_diaries/search' => 'public/search_diaries#search'
+
 get '/users/unsubscribe' => 'public/users#unsubscribe'
 patch '/users/withdraw' => 'public/users#withdraw' 
 

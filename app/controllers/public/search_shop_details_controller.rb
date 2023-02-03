@@ -7,10 +7,10 @@ class Public::SearchShopDetailsController < ApplicationController
       @query_flag = false
       @shops = []
       #byebug
-      if params[:name].present?
-        @query_flag = true
-        @shops = Shop.joins(:diaries).where("name LIKE ?", "%#{params[:name]}%").distinct
-      end
+      # if params[:name].present?
+      #   @query_flag = true
+      #   @shops = Shop.joins(:diaries).where("name LIKE ?", "%#{params[:name]}%").distinct
+      # end
       
       if params[:number_of_times].present?
         @query_flag = true
@@ -42,9 +42,14 @@ class Public::SearchShopDetailsController < ApplicationController
         @shops = Shop.joins(:diaries).where(diaries: { waiting_time: params[:waiting_time] }).distinct
       end
       
+      # if params[:genre].present?
+      #   @query_flag = true
+      #   @shops = Shop.joins(:diaries).where("name LIKE ?", "%#{params[:genre]}%").distinct
+      # end
+      
       if params[:genre].present?
         @query_flag = true
-        @shops = Shop.joins(:diaries).where("name LIKE ?", "%#{params[:genre]}%").distinct
+        @shops = Shop.joins(:diaries).where(diaries: { genre: params[:genre] }).distinct
       end
       
       if params[:price].present?
