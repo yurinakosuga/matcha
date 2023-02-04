@@ -1,5 +1,4 @@
-
-div class="container mt-5">
+<div class="container mt-5">
   <div class="col-5">
      <h5>抹茶日記一覧</h5>
   </div>
@@ -8,37 +7,36 @@ div class="container mt-5">
        
     
     
-      <% @diaries.each do |diary| %>
+    <% @diaries.each do |diary| %>
       
-      <div class="card w-50 mx-auto mt-4 shadow-lg">
-   
-  <div class="card-body">
+        <div class="card w-50 mx-auto mt-4 shadow-lg">
+          <div class="card-body">
+            <div class="row">
     
-    <div class="row">
-      　<div class="col-4">
-      　<%= link_to diary_path(diary.id) do  %>　　 
-         <%= image_tag diary.get_image, size: "5×5" %> 
-        <% end %>
-        </div>
-        <div class="col-5">
-        <%= diary.shop.name %></br>
-        <%= diary.genre.name %></br>
-        抹茶の濃さ
-         <% diary.darkness.times do %>
-          <span>★</span>
-         <% end %></br>
-        総合評価
-         <% diary.comprehensive_evaluation.times do %>
-          <span>★</span>
-         <% end %>
-         <%= link_to user_diaries_path(diary.user.id) do  %></br>
-            <%= diary.user.nickname %>
-          <% end %>
+              <div class="col-4">
+                <%= link_to diary_path(diary.id) do  %> 
+                    <%= image_tag diary.get_image, size: "5×5" %> 
+                <% end %>
+              </div>
+              <div class="col-5">
+                <%= diary.shop.name %></br>
+                <%= diary.genre.name %></br>
+                抹茶の濃さ
+                <% diary.darkness.times do %>
+                  <span>★</span>
+                <% end %></br>
+                総合評価
+                <% diary.comprehensive_evaluation.times do %>
+                  <span>★</span>
+                <% end %>
+                <%= link_to user_diaries_path(diary.user.id) do  %></br>
+                    <%= diary.user.nickname %>
+                <% end %>
+              </div>
+            
+            </div>
+          </div>
+        </div>  
         
-        </div>
-        
-         </div>
-  </div>
-</div>  
-      <% end %>
+    <% end %>
    

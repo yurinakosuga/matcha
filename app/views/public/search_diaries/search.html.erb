@@ -146,19 +146,47 @@
   
   
   <%= f.submit '検索する', class:"btn btn-outline-success" %>
-  <%= link_to "クリア", search_shop_details_search_path, class:"btn btn-outline-success" %>
+  <%= link_to "クリア", search_diaries_search_path, class:"btn btn-outline-success" %>
 <% end %> 
 
 
 <% if params[:q].present? %>
   <p>検索結果</p>
-  <% if @shops == [] %>
-　　検索結果はありません
+  <% if @diaries == [] %>
+    検索結果はありません
   <% end %>
  
-  <% @shops.each do |shop| %>
-     <%= shop.name %>
-     <%= link_to "日記一覧", diaries_path(shop_id: shop) %>
-  <% end %>
-
+  <% @diaries.each do |diary| %>
+      
+        <div class="card w-50 mx-auto mt-4 shadow-lg">
+          <div class="card-body">
+            <div class="row">
+        
+              <div class="col-4">
+                <%= link_to diary_path(diary.id) do  %>
+                    <%= image_tag diary.get_image, size: "5×5" %> 
+                <% end %>
+              </div>
+              <div class="col-5">
+                <%= diary.shop.name %></br>
+                <%= diary.genre.name %></br>
+                抹茶の濃さ
+                <% diary.darkness.times do %>
+                  <span>★</span>
+                <% end %></br>
+                総合評価
+                <% diary.comprehensive_evaluation.times do %>
+                  <span>★</span>
+                <% end %>
+                <%= link_to user_diaries_path(diary.user.id) do  %></br>
+                    <%= diary.user.nickname %>
+                <% end %>
+              </div>
+            
+            </div>
+          </div>
+        </div>  
+        
+   <% end %>
+   
 <% end %>
