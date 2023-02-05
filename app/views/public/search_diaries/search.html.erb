@@ -1,3 +1,7 @@
+<div class="container mt-4">
+  <h2 class="">抹茶日記検索</h2>
+</div>
+ <div class="mt-4 mb-4">
 <%= form_with model: @diary, url: search_diaries_search_path do |f| %>
   
   <%= f.hidden_field :q, value: "search" %>
@@ -148,7 +152,7 @@
   <%= f.submit '検索する', class:"btn btn-outline-success" %>
   <%= link_to "クリア", search_diaries_search_path, class:"btn btn-outline-success" %>
 <% end %> 
-
+</div>
 
 <% if params[:q].present? %>
   <p>検索結果</p>
@@ -188,5 +192,7 @@
         </div>  
         
    <% end %>
-   
+   <div class="d-flex justify-content-center my-4">
+     <%= paginate @diaries %>
+   </div>
 <% end %>

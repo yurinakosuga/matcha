@@ -1,10 +1,11 @@
-<div class="container">
+<div class="container mt-4">
+  <h2 class="">店名検索</h2>
   <div class="row" style="margin-top:4%">
   </div>
   <div class="row">
     <div class="col-12">
       <%= search_form_for @q, url:  search_shop_names_search_path do |f| %>
-        <%= f.label :name, "店名検索" %>
+        
         <%= f.search_field :name_cont %>
       
         <%= f.submit "検索する", class:"btn btn-outline-success" %>

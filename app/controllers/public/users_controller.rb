@@ -5,7 +5,7 @@ class Public::UsersController < ApplicationController
   def show
     
     @user = User.find(params[:id])
-    @new_diaries = Diary.all.order(updated_at: :desc).limit(10)
+    @new_diaries = Diary.page(params[:page]).order(updated_at: :desc)
   end
 
   def edit

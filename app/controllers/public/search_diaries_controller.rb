@@ -5,7 +5,7 @@ class Public::SearchDiariesController < ApplicationController
     def search
       #@shops = Shop.joins(:diaries)
       @query_flag = false
-      @diaries = Diary.all
+      @diaries = Diary.page(params[:page])
       #byebug
       # if params[:name].present?
       #   @query_flag = true

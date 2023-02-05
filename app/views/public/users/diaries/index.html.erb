@@ -1,40 +1,41 @@
 <div class="container mt-5">
-  <div class="col-5">
-     <h5>抹茶日記一覧</h5>
-  </div>
+  <h2 class="">抹茶日記一覧</h2>
 </div>
 
        
     
-    
-      <% @user.diaries.each do |diary| %>
+<% @diaries.each do |diary| %>
       
-      <div class="card w-50 mx-auto mt-4 shadow-lg">
-   
-  <div class="card-body">
-    
-    <div class="row">
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+    <div class="card-body">
+      <div class="row">
+      　
       　<div class="col-4">
-      　<%= link_to diary_path(diary.id) do  %>　　 
-         <%= image_tag diary.get_image, size: "5×5" %> 
-        <% end %>
+      　   <%= link_to diary_path(diary.id) do  %>　　 
+            <%= image_tag diary.get_image, size: "5×5" %> 
+          <% end %>
         </div>
         <div class="col-5">
-        <%= diary.shop.name %></br>
-        <%= diary.genre.name %></br>
-        抹茶の濃さ
-         <% diary.darkness.times do %>
-          <span>★</span>
-         <% end %></br>
-        総合評価
-         <% diary.comprehensive_evaluation.times do %>
-          <span>★</span>
-         <% end %>
-        
+          <%= diary.shop.name %></br>
+          <%= diary.genre.name %></br>
+          抹茶の濃さ
+          <% diary.darkness.times do %>
+            <span>★</span>
+          <% end %></br>
+          総合評価
+          <% diary.comprehensive_evaluation.times do %>
+            <span>★</span>
+          <% end %>
         </div>
         
-         </div>
-  </div>
-</div>  
-      <% end %>
-   
+    　</div>
+  　</div>
+　</div>
+　
+<% end %>
+
+ <div class="d-flex justify-content-center my-4">
+  <%= paginate @diaries %>
+ </div>
+
+ 

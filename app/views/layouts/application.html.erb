@@ -6,9 +6,10 @@
     <%= csp_meta_tag %>
     
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
+　　
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body class="d-flex flex-column vh-100 body">
@@ -88,15 +89,7 @@
                   <span>店名検索</span>
                 <% end %>
               </li>
-              
-              <li>
-                <%= link_to  search_shop_details_search_path, class: "nav-link text-dark" do %>
-                  
-                  <span>店舗詳細検索</span>
-                <% end %>
-              </li>
-              
-              
+            
               <li>
                 <%= link_to  destroy_user_session_path, method: :delete, class: "nav-link text-dark" do %>
                   
