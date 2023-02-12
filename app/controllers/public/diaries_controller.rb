@@ -3,9 +3,11 @@ class Public::DiariesController < ApplicationController
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   def index
-    @diaries = Diary.all.order(created_at: :desc)
+    
     if params[:shop_id].present?
-      @diaries = @diaries.where(shop_id: params[:shop_id])
+      @diaries = Diary.where(shop_id: params[:shop_id]).page(params[:page]).order(created_at: :desc)
+    else
+      @diaries = Diary.all.page(params[:page]).order(created_at: :desc)
     end
   end
   
@@ -24,6 +26,11 @@ class Public::DiariesController < ApplicationController
 
   def edit
     @diary = Diary.find(params[:id])
+    if @diary.user == current_user
+      render "edit"
+    else
+      redirect_to root_path
+    end
   end
   
   def create

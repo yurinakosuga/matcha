@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2023_01_21_004945) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.integer "diary_id"
-    t.string "comment_content"
+    t.string "comment_content", null: false
   end
 
   create_table "diaries", force: :cascade do |t|

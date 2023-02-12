@@ -4,9 +4,16 @@
       <h3 class=" py-4 mb-0">新規会員登録</h3>
       <div class="form-body p-4">
         
-
+        <% if @user.errors.any? %>
+           <ul style="list-style: none;">
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+          
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= render "public/shared/error_messages", resource: resource %>
+          
         
           <div class="field">
             フリガナ

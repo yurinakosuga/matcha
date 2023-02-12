@@ -1,6 +1,10 @@
 class Public::UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:update, :withdraw, :guest_sign_in]
+  before_action :authenticate_user!, except: [:index, :update, :withdraw, :guest_sign_in]
   before_action :configure_permitted_parameters, if: :devise_controller?
+  
+  def index
+    redirect_to new_user_registration_path
+  end
   
   def show
     

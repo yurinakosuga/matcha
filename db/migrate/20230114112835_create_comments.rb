@@ -5,7 +5,7 @@ class CreateComments < ActiveRecord::Migration[6.1]
       t.timestamps
       t.integer  :user_id
       t.integer  :diary_id
-      t.string  :comment_content
+      t.string  :comment_content, null: false
     end
   end
 end

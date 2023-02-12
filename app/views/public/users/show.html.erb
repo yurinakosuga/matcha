@@ -1,16 +1,18 @@
-<div class="container mt-5">
-  <h2 class="">マイページ</h2>
-    <div class="mt-4">
+<div class="container mt-4">
+    <h2 class="text-center">マイページ</h2>
+    <div class="row">
+    　<div class="col-12 col-md-6 mx-auto text-center">
         <p><%= link_to "抹茶日記を書く", new_diary_path, class:"btn btn-outline-primary" %></p>
         <p><%= link_to "抹茶日記一覧", user_diaries_path(current_user.id), class:"btn btn-outline-primary" %></p>
         <p><%= link_to "会員登録情報", edit_user_path(current_user.id), class:"btn btn-outline-primary" %></p>
         <% unless current_user.email == 'guest@example.com' %>
           <p><%= link_to '退会する', users_unsubscribe_path, class:"btn btn-outline-primary" %></p>
         <% end %>
+    　</div>
     </div>
 </div> 
 <div class="container mt-5">
-  <h2 class="">みんなの抹茶日記新着</h2>
+  <h2 class="text-center">みんなの抹茶日記新着</h2>
 </div>
 
     <% @new_diaries.each do |diary| %>

@@ -1,75 +1,195 @@
-<h1>抹茶日記</h1>
-<div>
- <%= image_tag @diary.image, size: "5×5" %>
- <div class="field">
-   店名
-   <%= @diary.shop.name %>
- </div>
- <div class="field">
-   来店回数
-   <%= @diary.number_of_times %>
- </div>
- <div class="field">
-   日付
-   <%= @diary.date.strftime('%Y年%m月%d日') %>
- </div>
- <div class="field">
-   曜日
-   <%= @diary.week_i18n %>
- </div>
- <div class="field">
-   時間帯
-   <%= @diary.time_i18n %>
- </div>
- <div class="field">
-   人数
-   <%= @diary.number_of_people %>
- </div>
- <div class="field">
-   利用方法
-   <%= @diary.how_to_use_i18n %>
- </div>
- <div class="field">
-   待ち時間
-   <%= @diary.waiting_time_i18n %>
- </div>
- <div class="field">
-   ジャンル
-   <%= @diary.genre.name %>
- </div>
- <div class="field">
-   値段
-   <%= @diary.price_i18n %>
- </div>
- <div class="field">
-   量
-   <%= @diary.amount_i18n %>
- </div>
- <div class="field">
-   抹茶の濃さ
-   <% @diary.darkness.times do %>
-    <span>★</span>
-   <% end %>
- </div>
- <div class="field">
-   抹茶の甘さ
-   <%= @diary.sweetness_i18n %>
- </div>
- <div class="field">
-   総合評価
-   <% @diary.comprehensive_evaluation.times do %>
-    <span>★</span>
-   <% end %>
- </div>
- <div class="field">
-  自由コメント欄</br>
-  <%= @diary.free_writing %>
- </div>
+<div class="container mt-4">
+  <h2 class="text-center">抹茶日記</h2>
+   <div class="row">
+     <div class="col-12 col-md-10 mx-auto">
+
+     <div class="text-center">
+      <%= image_tag @diary.image, size: "5×5" %>
+      </div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        店名
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <%= @diary.shop.name %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        来店回数
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <%= @diary.number_of_times %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        日付
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <%= @diary.date.strftime('%Y年%m月%d日') %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        曜日
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <%= @diary.week_i18n %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        時間帯
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <%= @diary.time_i18n %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        人数
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+       <%= @diary.number_of_people %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        利用方法
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+       <%= @diary.how_to_use_i18n %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        待ち時間
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+       <%= @diary.waiting_time_i18n %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        スイーツ
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+       <%= @diary.genre.name %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        値段
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+       <%= @diary.price_i18n %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        量
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+       <%= @diary.amount_i18n %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        抹茶の濃さ
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+       <% @diary.darkness.times do %>
+        <span>★</span>
+       <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        抹茶の甘さ
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+       <%= @diary.sweetness_i18n %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        総合評価
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+       <% @diary.comprehensive_evaluation.times do %>
+        <span>★</span>
+       <% end %>
+    </div>
+  </div>
+</div>
+ 
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+        自由コメント欄
+    </div>
+    <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+       <%= @diary.free_writing %>
+    </div>
+  </div>
+</div>
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ <div class="text-center">
  
  <% if @diary.user_id == current_user.id %>
  
     <%= link_to "編集する", edit_diary_path(@diary.id), class:"btn btn-success" %>
-    <%= link_to "削除する",diary_path(@diary.id), method: :delete ,class: "btn btn-sm btn-danger" %>
+    <%= link_to "削除する",diary_path(@diary.id), method: :delete, data: {confirm: "本当に削除しますか？"} ,class: "btn btn-sm btn-danger" %>
  
  <% else %>
  
@@ -81,7 +201,9 @@
     
  <% end %>
  
- <h2>コメント一覧</h2>
+ </div>
+ 
+ <h2 class="text-center">コメント一覧</h2>
  <% @comments.each do |comment| %>
    <div class="card w-50 mx-auto mt-4 shadow-lg">
    
@@ -96,14 +218,19 @@
       <%= comment.user.nickname %> 
     <% end %>/
     <%= comment.user.age_i18n %>/
-    <%= comment.user.gender_i18n %>)
+    <%= comment.user.gender_i18n %>/
+    <%= comment.created_at.strftime('%Y.%m.%d') %>)
     
     <% if comment.user_id == current_user.id %>
-      <%= link_to "削除する", diary_comment_path(@diary, comment.id), method: :delete ,class: "btn btn-sm btn-danger" %>
+      <%= link_to "削除する", diary_comment_path(@diary, comment.id), method: :delete, data: {confirm: "本当に削除しますか？"} ,class: "btn btn-sm btn-danger" %>
     <% end %>
     </div>
     </div>
   </div>
 </div>   
  <% end %>
+</div>
+
+</div>
+</div>
 </div>

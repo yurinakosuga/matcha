@@ -1,56 +1,103 @@
-<h2>会員情報編集</h2>
+<div class="container mt-4">
+    <h2 class="text-center">会員情報編集</h2>
+  <div class="mt-4 mb-4">
+    <div class="row">
+      <div class="col-12 col-md-8 mx-auto">
+
 
 <%= form_with model: @user, url:user_path(current_user.id), method: :patch do |f| %>
 
-  <div class="field">
-    フリガナ
-    <%= f.label :"(セイ)" %>
-    <%= f.text_field :last_name_kana %>
-    <%= f.label :"(メイ)" %>
-    <%= f.text_field :first_name_kana %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+        <%= f.label :last_name_kana, "フリガナ(セイ)" %>
+      </div>
+      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+        <%= f.text_field :last_name_kana %>
+      </div>
+      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+        <%= f.label :first_name_kana, "       (メイ)" %>
+      </div>
+       <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+        <%= f.text_field :first_name_kana %>
+      </div>
+    </div> 
   </div>
   
   
-  <div class="field">
-    <%= f.label :"ニックネーム" %>
-    <%= f.text_field :nickname %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+        <%= f.label :"ニックネーム" %>
+      </div>
+      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+        <%= f.text_field :nickname %>
+      </div>
+    </div> 
   </div>
   
-  <div class="field">
-    <%= f.label :"性別" %>
-    <%= f.radio_button :gender, User.genders.key(0) %>
-    <%= f.label :gender, User.genders_i18n[:male] %>
-    <%= f.radio_button :gender, User.genders.key(1) %>
-    <%= f.label :gender, User.genders_i18n[:female]%>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+        <%= f.label :"性別" %>
+      </div>
+      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+        <%= f.radio_button :gender, User.genders.key(0) %>
+        <%= f.label :gender, User.genders_i18n[:male] %>
+        <%= f.radio_button :gender, User.genders.key(1) %>
+        <%= f.label :gender, User.genders_i18n[:female]%>
+      </div>
+    </div>
   </div>
   
-  <div class="field">
-    <%= f.label :"年齢" %>
-    <%= f.select :age, [['10代未満',"under_teens"],['10代',"teens"], ['20代',"twenties"], ['30代',"thirties"], ['40代',"forties"], 
-    ['50代',"fifties"], ['60代',"sixties"], ['70代以上',"over_seventies"]] %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+        <%= f.label :"年齢" %>
+      </div>
+      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+        <%= f.select :age, [['10代未満',"under_teens"],['10代',"teens"], ['20代',"twenties"], ['30代',"thirties"], ['40代',"forties"], 
+        ['50代',"fifties"], ['60代',"sixties"], ['70代以上',"over_seventies"]] %>
+      </div>
+    </div>
   </div>
   
-  <div class="field">
-    <%= f.label :"お住まいの都道府県" %>
-    <%= f.select :address, 
-     [['北海道',1],['青森県',2], ['岩手県',3], ['宮城県',4], ['秋田県',5], ['山形県',6], ['福島県',7], ['茨城県',8],
-      ['栃木県',9],['群馬県',10], ['埼玉県',11], ['千葉県',12], ['東京都',13], ['神奈川県',14], ['新潟県',15], ['富山県',16],
-      ['石川県',17],['福井県',18], ['山梨県',19], ['長野県',20], ['岐阜県',21], ['静岡県',22], ['愛知県',23], ['三重県',24],
-      ['滋賀県',25],['京都府',26], ['大阪府',27], ['兵庫県',28], ['奈良県',29], ['和歌山県',30], ['鳥取県',31], ['島根県',32],
-      ['岡山県',33],['広島県',34], ['山口県',35], ['徳島県',36], ['香川県',37], ['愛媛県',38], ['高知県',39], ['福岡県',40],
-      ['佐賀県',41],['長崎県',42], ['熊本県',43], ['大分県',44], ['宮崎県',45], ['鹿児島県',46], ['沖縄県',47]] %>
-    　 
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+        <%= f.label :"お住まいの都道府県" %>
+      </div>
+      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+        <%= f.select :address, 
+         [['北海道',1],['青森県',2], ['岩手県',3], ['宮城県',4], ['秋田県',5], ['山形県',6], ['福島県',7], ['茨城県',8],
+          ['栃木県',9],['群馬県',10], ['埼玉県',11], ['千葉県',12], ['東京都',13], ['神奈川県',14], ['新潟県',15], ['富山県',16],
+          ['石川県',17],['福井県',18], ['山梨県',19], ['長野県',20], ['岐阜県',21], ['静岡県',22], ['愛知県',23], ['三重県',24],
+          ['滋賀県',25],['京都府',26], ['大阪府',27], ['兵庫県',28], ['奈良県',29], ['和歌山県',30], ['鳥取県',31], ['島根県',32],
+          ['岡山県',33],['広島県',34], ['山口県',35], ['徳島県',36], ['香川県',37], ['愛媛県',38], ['高知県',39], ['福岡県',40],
+          ['佐賀県',41],['長崎県',42], ['熊本県',43], ['大分県',44], ['宮崎県',45], ['鹿児島県',46], ['沖縄県',47]] %>
+    　</div>
+    </div>
   </div>
   
-  <div class="field">
-    <%= f.label :"メールアドレス" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+        <%= f.label :"メールアドレス" %>
+      </div>
+      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
+  
+  <div class="row">
+    <div class="col-12 col-md-6 mx-auto text-center">
     <%= f.submit "編集内容を保存", class:"btn btn-success" %>
+    </div>
   </div>
   
-   
-  
-<% end %>
+  <% end %>
+      </div>
+    </div>
+  </div>
+</div>

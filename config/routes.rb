@@ -19,7 +19,7 @@ get '/users/unsubscribe' => 'public/users#unsubscribe'
 patch '/users/withdraw' => 'public/users#withdraw' 
 
 scope module: :public do
-    resources :users, only: [:show, :edit, :update] do
+    resources :users, only: [:index, :show, :edit, :update] do
       scope module: :users do
         resources :diaries, only: :index
       end
