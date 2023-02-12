@@ -11,10 +11,10 @@
   
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :shop_id, "店名" %>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-5">
         <%= f.select :shop_id, options_from_collection_for_select(Shop.all, :id, :name), {prompt: ''}, {class: 'form-control'} %>
       </div>
     </div>
@@ -22,10 +22,10 @@
   
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :number_of_times, "来店回数" %>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-5">
         <%= f.select :number_of_times,[
                                         ['1回', 1], ['2回', 2], ['3回', 3] , ['4回', 4], ['5回', 5],
                                         ['6回', 6], ['7回', 7], ['8回', 8] , ['9回', 9], ['10回', 10],
@@ -36,10 +36,10 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :week, "曜日" %>
       </div>
-      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+      <div class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center">
         <%= f.radio_button :week, Diary.weeks.key(0) %>
         <%= f.label :week, Diary.weeks_i18n[:weekday] %>
         <%= f.radio_button :week, Diary.weeks.key(1) %>
@@ -50,10 +50,10 @@
   
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :time, "時間帯" %>
       </div>
-      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+      <div class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center">
         <%= f.radio_button :time, Diary.times.key(0) %>
         <%= f.label :time, Diary.times_i18n[:morning] %>
         <%= f.radio_button :time, Diary.times.key(1) %>
@@ -70,10 +70,10 @@
   
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :number_of_people, "人数" %>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-5">
         <%= f.select :number_of_times,[
                                         ['1人', 1], ['2人', 2], ['3人', 3] , ['4人', 4], ['5人', 5],
                                         ['6人', 6], ['7人', 7], ['8人', 8] , ['9人', 9], ['10人', 10],
@@ -84,10 +84,10 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :how_to_use, "利用方法" %>
       </div>
-      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+      <div class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center">
         <%= f.radio_button :how_to_use, Diary.how_to_uses.key(0) %>
         <%= f.label :how_to_use, Diary.how_to_uses_i18n[:for_here] %>
         <%= f.radio_button :how_to_use, Diary.how_to_uses.key(1) %>
@@ -98,10 +98,10 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :waiting_time, "待ち時間" %>
       </div>
-      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+      <div class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center">
         <%= f.radio_button :waiting_time, Diary.waiting_times.key(0) %>
         <%= f.label :waiting_time, Diary.waiting_times_i18n[:none_time] %>
         <%= f.radio_button :waiting_time, Diary.waiting_times.key(1) %>
@@ -118,10 +118,10 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :genre_id, "スイーツ" %>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-5">
         <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), {prompt: ''}, {class: 'form-control'} %>
       </div>
     </div>
@@ -129,10 +129,10 @@
   
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :price, "値段" %>
       </div>
-      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+      <div class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center">
         <%= f.radio_button :price, Diary.prices.key(0) %>
         <%= f.label :price, Diary.prices_i18n[:yen_500] %>
         <%= f.radio_button :price, Diary.prices.key(1) %>
@@ -147,10 +147,10 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :amount, "量" %>
       </div>
-      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+      <div class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center">
         <%= f.radio_button :amount, Diary.amounts.key(0) %>
         <%= f.label :amount, Diary.amounts_i18n[:small] %>
         <%= f.radio_button :amount, Diary.amounts.key(1) %>
@@ -163,10 +163,10 @@
   
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :darkness, "抹茶の濃さ" %>
       </div>
-      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+      <div class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center">
         <div class="d-inline-block">
           <div class="post_form">
             <%= f.radio_button :darkness, 5 ,id: 'darkness_1'%>
@@ -191,10 +191,10 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
         <%= f.label :sweetness, "抹茶の甘さ" %>
       </div>
-      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+      <div class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center">
         <%= f.radio_button :sweetness, Diary.sweetnesses.key(0) %>
         <%= f.label :sweetness, Diary.sweetnesses_i18n[:not_sweet] %>
         <%= f.radio_button :sweetness, Diary.sweetnesses.key(1) %>
@@ -207,10 +207,10 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-md-3 d-flex justify-content-center justify-content-md-end align-items-center">
+      <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
          <%= f.label :comprehensive_evaluation, "総合評価" %>
       </div>
-      <div class="col-md-9 d-flex justify-content-center justify-content-md-start align-items-center">
+      <div class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center">
         <div class="d-inline-block">
           <div class="post_form">
             <%= f.radio_button :comprehensive_evaluation, 5 ,id: 'all_review_1'%>
@@ -245,9 +245,9 @@
 </div>
 
 <% if params[:q].present? %>
-  <p>検索結果</p>
+  <h2 class="text-center">検索結果</h2>
   <% if @diaries == [] %>
-    検索結果はありません
+  <h5 class="text-center">検索結果はありません</h5>
   <% end %>
  
   <% @diaries.each do |diary| %>

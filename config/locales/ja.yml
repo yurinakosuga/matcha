@@ -1,7 +1,5 @@
 ja:
   activerecord:
-    models:
-      diary: '日記'
     attributes:
       diary:
         shop: "店名"
@@ -15,10 +13,7 @@ ja:
         darkness: "抹茶の濃さ"
         sweetness: "抹茶の甘さ"
         comprehensive_evaluation: "総合評価"
-  activerecord:
-    models:
-      user: '会員'
-    attributes:
+        number_of_times: "来店回数"
       user:
         email: "メールアドレス"
         encrypted_password: "パスワード"

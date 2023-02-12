@@ -1,31 +1,39 @@
 <div class="container mt-4">
-  <h2 class="">店名検索</h2>
-  <div class="row" style="margin-top:4%">
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <%= search_form_for @q, url:  search_shop_names_search_path do |f| %>
+  <h2 class="text-center">店名検索</h2>
+  
+  <div class="mt-4 mb-4">
+   <div class="row">
+     <div class="col-12 col-md-10 mx-auto">
+       
+       <div class="row">
+          <div class="col-12 col-md-6 mx-auto text-center"> 
+            <%= search_form_for @q, url:  search_shop_names_search_path do |f| %>
+              
+              <%= f.search_field :name_cont %>
+            
+              <%= f.submit "検索する", class:"btn btn-outline-success" %>
+              <%= link_to "クリア", search_shop_names_search_path, class:"btn btn-outline-success" %>
+            <% end %>
+          </div>
+        </div>
         
-        <%= f.search_field :name_cont %>
-      
-        <%= f.submit "検索する", class:"btn btn-outline-success" %>
-        <%= link_to "クリア", search_shop_names_search_path, class:"btn btn-outline-success" %>
-      <% end %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-    <% if params[:q] %>
-      <p>検索結果</p>
-      <% if @shops == [] %>
-    　　検索結果はありません
-      <% else %>
-        <% @shops.each do |shop| %>
-           <%= shop.name %>
-           <%= link_to "日記一覧", diaries_path(shop_id: shop) %>
-        <% end %>
-      <% end %>
-    <% end %>
+        <div class="row">
+          <div class="col-12">
+          <% if params[:q] %>
+            <h2 class="text-center">検索結果</h2>
+            <% if @shops == [] %>
+            <h5 class="text-center">検索結果はありません</h5>
+            <% else %>
+              <% @shops.each do |shop| %>
+                 <%= shop.name %>
+                 <%= link_to "日記一覧", diaries_path(shop_id: shop) %>
+              <% end %>
+            <% end %>
+          <% end %>
+          </div>
+        </div>
+        
+      </div>
     </div>
   </div>
 </div>
